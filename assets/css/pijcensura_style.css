@@ -1,0 +1,162 @@
+/* 
+    PIJ CENSURA - Custom Styles 
+    Foco: Suavização de fontes e ajustes finos do AdminLTE
+*/
+
+/* Importando uma fonte mais moderna e nítida para dashboards */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --accent-color: #3b82f6; /* Azul moderno */
+}
+
+/* --- TRATAMENTO ANTI-SERRILHADO (ANTI-ALIASING) --- */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    /* Truque visual: um shadow minúsculo que força o navegador a suavizar as bordas das letras */
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004); 
+}
+
+/* Suavização para ícones de fonte */
+.fas, .far, .fab, .fa, .nav-icon {
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0); /* Força renderização pela GPU */
+}
+
+/* --- AJUSTES DO LAYOUT DARK MODE --- */
+
+/* Gradiente sutil no fundo para tirar o aspecto chapado */
+.dark-mode .content-wrapper {
+    background-color: #121417 !important;
+    background-image: radial-gradient(circle at top right, #1e293b, transparent);
+}
+
+/* Ajuste do Sidebar (Menu Lateral) */
+.main-sidebar {
+    background-color: #1a1d21 !important;
+}
+
+.brand-link {
+    border-bottom: 1px solid #2d3238 !important;
+}
+
+/* Cor de destaque nos itens ativos do menu */
+.nav-pills .nav-link.active, 
+.active > .nav-link {
+    background-color: var(--accent-color) !important;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* --- COMPONENTES --- */
+
+/* Cards mais suaves e modernos */
+.card {
+    border-radius: 8px !important;
+    border: none !important;
+    margin-bottom: 1.5rem;
+}
+
+.card-outline.card-primary {
+    border-top: 3px solid var(--accent-color) !important;
+}
+
+/* Estilização do Textarea de Importação (Estilo Terminal) */
+textarea.font-monospace {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+    background-color: #0d0e10 !important;
+    color: #4ade80 !important; /* Verde Matrix/Nítido */
+    border: 1px solid #2d3238 !important;
+    padding: 15px !important;
+    border-radius: 6px;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Ajuste de Inputs e Seletores no Modo Escuro */
+.dark-mode .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+/* Animação suave ao carregar conteúdo AJAX */
+#main-content {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar mais fina e moderna (Chrome/Edge) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1d21;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+}
+
+/* --- MODO ESCURO (DARK MODE) PARA SIDEBAR --- */
+.dark-mode .main-sidebar {
+    background-color: #1a1d21 !important;
+    color: #e5e7eb !important;
+}
+
+.dark-mode .main-sidebar .nav-link {
+    color: #d1d5db !important;
+}
+
+.dark-mode .main-sidebar .nav-link:hover {
+    background-color: #2d3238 !important;
+    color: #f3f4f6 !important;
+}
+
+.dark-mode .main-sidebar .nav-link.active {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .main-sidebar .nav-item.has-treeview > .nav-link[data-toggle="treeview"].menu-open,
+.dark-mode .main-sidebar .nav-item.has-treeview > .nav-link[data-toggle="treeview"]:hover {
+    background-color: #2d3238 !important;
+}
+
+.dark-mode .main-sidebar .nav-treeview > .nav-item > .nav-link {
+    color: #9ca3af !important;
+}
+
+.dark-mode .main-sidebar .nav-treeview > .nav-item > .nav-link:hover {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+    color: #d1d5db !important;
+}
+
+.dark-mode .main-sidebar .nav-treeview > .nav-item > .nav-link.active {
+    background-color: rgba(59, 130, 246, 0.2) !important;
+    color: #3b82f6 !important;
+}
+
+.dark-mode .main-sidebar .user-panel {
+    border-bottom-color: #2d3238 !important;
+}
+
+.dark-mode .main-sidebar .brand-link {
+    border-bottom-color: #2d3238 !important;
+    background-color: #121417 !important;
+}

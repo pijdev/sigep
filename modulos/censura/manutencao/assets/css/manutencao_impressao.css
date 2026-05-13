@@ -1,0 +1,164 @@
+/* CSS específico para impressão do Controle Manual de Manutenções - OTIMIZADO UMA PÁGINA */
+@page {
+    size: A4;
+    margin: 0.8cm; /* Reduzido para aproveitar mais espaço */
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 11px; /* Reduzido de 12px */
+    margin: 0;
+    line-height: 1.2; /* Reduzido para compactar */
+    background: white;
+}
+
+.documento-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.page-break {
+    page-break-after: always;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px; /* Reduzido */
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 4px; /* Reduzido de 6px */
+    vertical-align: top;
+    text-align: left;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.header-table td {
+    border: none;
+    text-align: center;
+    padding: 3px; /* Reduzido */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bg-gray {
+    background-color: #f0f0f0;
+}
+
+.center {
+    text-align: center;
+}
+
+.checkbox-large {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #000;
+    display: inline-block;
+    margin-right: 2px;
+    vertical-align: middle;
+    position: relative;
+}
+
+/* Otimizações para checkboxes manuais */
+.checkbox-large::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+}
+
+.linha-escura {
+    border-bottom: 2px solid #000;
+    height: 20px; /* Reduzido */
+    display: inline-block;
+    min-width: 150px; /* Reduzido */
+}
+
+.assinatura-box {
+    margin-top: 20px; /* Reduzido drasticamente */
+    text-align: center;
+}
+
+.titulo-grande {
+    font-size: 14px; /* Reduzido de 16px */
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0; /* Reduzido */
+}
+
+.descricao-grande {
+    min-height: 25px; /* Reduzido de 40px */
+}
+
+.observacoes-linha {
+    min-height: 20px; /* Reduzido de 30px */
+}
+
+/* Otimizações para impressão */
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        font-size: 10px; /* Mais reduzido na impressão */
+    }
+
+    .documento-container {
+        page-break-inside: avoid;
+    }
+
+    table {
+        page-break-inside: auto;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+
+    td {
+        page-break-inside: avoid;
+        padding: 3px; /* Mais reduzido na impressão */
+    }
+
+    .header-table img {
+        max-height: 50px !important; /* Reduzido */
+        max-width: 70px !important; /* Reduzido */
+    }
+
+    /* Forçar uma página apenas */
+    .documento-container {
+        height: 27.7cm; /* Altura A4 - margens */
+        overflow: hidden;
+    }
+}
+
+/* Animação suave para checkboxes (visual apenas) */
+.checkbox-large:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Layout responsivo para visualização em tela */
+@media screen {
+    body {
+        background: #f5f5f5;
+        padding: 10px; /* Reduzido */
+    }
+
+    .documento-container {
+        background: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        padding: 10px; /* Reduzido */
+        margin-bottom: 10px; /* Reduzido */
+    }
+}

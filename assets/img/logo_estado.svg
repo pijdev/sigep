@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="56" viewBox="0 0 120 56">
+  <rect width="120" height="56" fill="#0066cc"/>
+  <text x="60" y="28" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">
+    ESTADO DE
+  </text>
+  <text x="60" y="40" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">
+    SANTA CATARINA
+  </text>
+</svg>

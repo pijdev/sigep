@@ -1,0 +1,29 @@
+.md-card {
+    border-left: 4px solid #007bff;
+    transition: all 0.3s ease;
+}
+.md-card:hover {
+    box-shadow: 0 4px 12px rgba(0,123,255,0.15);
+    transform: translateY(-2px);
+}
+.md-status-ativa {
+    border-left-color: #28a745;
+}
+.md-status-concluida {
+    border-left-color: #6c757d;
+}
+.md-pulse {
+    animation: pulse-red 2s infinite;
+}
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+.dark-mode .md-card {
+    background-color: #343a40;
+    border-color: #495057;
+}
+.dark-mode .md-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}

@@ -1,0 +1,489 @@
+/* CSS específico do módulo Lista de Trabalho */
+
+/* Tabela CTC: colunas "fit" pelo conteudo, mas tabela sempre ocupa 100% do container */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#tabelaCTCs {
+    width: 100%;
+    table-layout: auto;
+    /* Em telas menores, preferimos rolagem horizontal a "amassar" colunas */
+    min-width: 980px;
+}
+
+#tabelaCTCs th,
+#tabelaCTCs td {
+    vertical-align: middle;
+    padding: 0.45rem 0.55rem;
+    font-size: 0.875rem;
+}
+
+/* Cabeçalho: nao quebrar para manter a leitura */
+#tabelaCTCs thead th {
+    white-space: nowrap;
+}
+
+/* Por padrao, colunas "curtas" ficam em uma linha para medir pelo conteudo */
+#tabelaCTCs tbody td {
+    white-space: nowrap;
+}
+
+/* Colunas de texto: podem quebrar e absorver o espaco restante */
+#tabelaCTCs th:nth-child(2),
+#tabelaCTCs td:nth-child(2),
+#tabelaCTCs th:nth-child(5),
+#tabelaCTCs td:nth-child(5) {
+    white-space: normal;
+}
+
+/* Truque de "fit-content" para colunas curtas (datas/badges/acoes): encolhe ao conteudo, sem reduzir a tabela */
+#tabelaCTCs th:nth-child(1),
+#tabelaCTCs td:nth-child(1),
+#tabelaCTCs th:nth-child(3),
+#tabelaCTCs td:nth-child(3),
+#tabelaCTCs th:nth-child(4),
+#tabelaCTCs td:nth-child(4),
+#tabelaCTCs th:nth-child(6),
+#tabelaCTCs td:nth-child(6),
+#tabelaCTCs th:nth-child(7),
+#tabelaCTCs td:nth-child(7),
+#tabelaCTCs th:nth-child(8),
+#tabelaCTCs td:nth-child(8),
+#tabelaCTCs th:nth-child(9),
+#tabelaCTCs td:nth-child(9),
+#tabelaCTCs th:nth-child(10),
+#tabelaCTCs td:nth-child(10) {
+    width: 1%;
+}
+
+/* Acoes: nao quebrar e evitar que botões estiquem a coluna */
+#tabelaCTCs td:nth-child(10) .btn-group {
+    flex-wrap: nowrap;
+}
+
+/* Badges aprimorados */
+.badge {
+    font-size: 0.7em;
+    font-weight: 600;
+    padding: 0.25em 0.5em;
+    white-space: nowrap;
+}
+
+.badge-success {
+    background-color: #28a745;
+}
+
+.badge-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+}
+
+.badge-info {
+    background-color: #17a2b8;
+}
+
+.badge-secondary {
+    background-color: #6c757d;
+}
+
+.badge-light {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* Destaque para internos com alta prioridade */
+.table-success {
+    background-color: rgba(40, 167, 69, 0.1) !important;
+}
+
+.table-success:hover {
+    background-color: rgba(40, 167, 69, 0.2) !important;
+}
+
+.table-danger {
+    background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+.table-danger:hover {
+    background-color: rgba(220, 53, 69, 0.2) !important;
+}
+
+/* Estrela de prioridade */
+.fa-star {
+    color: #ffc107;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Cards estatísticos melhorados */
+.info-box {
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.info-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: rgba(0,0,0,0.2);
+}
+
+.info-box-icon {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+/* Filtros aprimorados */
+.card-outline {
+    border: 2px solid #007bff;
+}
+
+.card-outline.card-primary .card-header {
+    background-color: #007bff;
+    color: white;
+    border-bottom: 2px solid #007bff;
+}
+
+/* Botões de ação */
+.btn-group .btn {
+    border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.btn-group .btn:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/* Responsividade aprimorada - Adaptável ao zoom */
+@media (max-width: 1400px) {
+    #tabelaCTCs th,
+    #tabelaCTCs td {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    #tabelaCTCs th,
+    #tabelaCTCs td {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    #tabelaCTCs th,
+    #tabelaCTCs td {
+        padding: 0.3rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        font-size: 0.7rem;
+    }
+
+    #tabelaCTCs th,
+    #tabelaCTCs td {
+        padding: 0.2rem;
+        font-size: 0.7rem;
+    }
+
+    .badge {
+        font-size: 0.65rem;
+        padding: 0.2em 0.4em;
+    }
+
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-group .btn {
+        border-radius: 0.25rem;
+        margin-bottom: 2px;
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+/* Offcanvas customizado seguindo padrão SIGEP */
+.offcanvas-custom {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(800px, 90vw);
+  height: 100vh;
+  background: #fff;
+  box-shadow: -12px 0 34px rgba(0,0,0,.25);
+  transform: translateX(100%);
+  transition: transform .25s ease;
+  z-index: 1065;
+  display: flex;
+  flex-direction: column;
+}
+.offcanvas-custom.show { transform: translateX(0); }
+.offcanvas-custom.dark-mode {
+  background: #343a40;
+  color: #fff;
+}
+.offcanvas-custom-header {
+  padding: .75rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, #f8f9fa, #eef1f4);
+}
+.offcanvas-custom.dark-mode .offcanvas-custom-header {
+  background: linear-gradient(180deg, #495057, #343a40);
+  border-bottom-color: #6c757d;
+}
+.offcanvas-custom-body {
+  padding: 1rem;
+  overflow: auto;
+  flex: 1;
+}
+.offcanvas-custom-footer {
+  padding: .75rem 1rem;
+  border-top: 1px solid #dee2e6;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.offcanvas-custom.dark-mode .offcanvas-custom-footer {
+  border-top-color: #6c757d;
+}
+
+/* Backdrop */
+.offcanvas-backdrop-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 1060;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.offcanvas-backdrop-custom.show {
+  opacity: 1;
+}
+
+body.offcanvas-open {
+  overflow: hidden;
+}
+
+.inicio-busca-resultados {
+  max-height: 240px;
+  overflow-y: auto;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+/* Tema dark mode */
+.dark-mode .offcanvas-custom {
+  background: #343a40;
+  color: #fff;
+}
+.dark-mode .offcanvas-custom .form-control,
+.dark-mode .offcanvas-custom .form-select,
+.dark-mode .offcanvas-custom textarea {
+  background-color: #495057;
+  border-color: #6c757d;
+  color: #fff;
+}
+.dark-mode .offcanvas-custom .form-control:focus,
+.dark-mode .offcanvas-custom .form-select:focus,
+.dark-mode .offcanvas-custom textarea:focus {
+  background-color: #495057;
+  border-color: #007bff;
+  color: #fff;
+}
+.dark-mode .offcanvas-custom .table {
+  color: #fff;
+}
+.dark-mode .offcanvas-custom .table-dark {
+  --bs-table-bg: #495057;
+  --bs-table-striped-bg: #343a40;
+}
+
+/* Animações suaves */
+.btn-close {
+  transition: all 0.2s ease;
+}
+
+.btn-close:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .offcanvas-custom {
+    width: 100vw;
+  }
+}
+
+/* Melhorias visuais para badges */
+.badge {
+  font-size: 0.75em;
+  font-weight: 600;
+  padding: 0.375em 0.75em;
+}
+
+/* Loading states */
+.loading-spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estados de hover para botões de ação */
+.btn-sm {
+  transition: all 0.2s ease;
+}
+
+.btn-sm:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Melhorias para tabela responsiva */
+.table-responsive {
+  border-radius: 0.25rem;
+}
+
+.table th {
+  border-top: none;
+  font-weight: 600;
+  background-color: #f8f9fa;
+}
+
+.dark-mode .table th {
+  background-color: #495057;
+  color: #fff;
+}
+
+/* Estados especiais para linhas da tabela */
+.table-danger {
+  background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+.dark-mode .table-danger {
+  background-color: rgba(220, 53, 69, 0.2) !important;
+}
+
+/* Melhorias para cards de estatísticas */
+.info-box {
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Animações para offcanvas */
+.offcanvas-custom {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.offcanvas-custom.show {
+  animation-name: slideInRight;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Melhorias para formulários */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estados de validação */
+.is-invalid {
+  border-color: #dc3545;
+}
+
+.is-valid {
+  border-color: #28a745;
+}
+
+/* Feedback visual */
+.form-text {
+  font-size: 0.875em;
+  color: #6c757d;
+}
+
+.dark-mode .form-text {
+  color: #adb5bd;
+}
+
+/* Melhorias para paginação */
+.pagination .page-link {
+  border-radius: 0.25rem;
+  margin: 0 0.125rem;
+  transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Estados de carregamento */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.dark-mode .loading-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}

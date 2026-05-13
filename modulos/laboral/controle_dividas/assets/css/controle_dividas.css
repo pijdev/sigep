@@ -1,0 +1,688 @@
+/**
+ * SIGEP Controle de Dívidas - Estilos Customizados
+ * Compatível com AdminLTE 3
+ */
+
+/* Cards Enhancement */
+.small-box {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.small-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading States */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #6c757d;
+}
+
+.loading-spinner i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Empty States */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Badge Customizations */
+.badge {
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.badge-success {
+  background-color: #28a745;
+}
+
+.badge-danger {
+  background-color: #dc3545;
+}
+
+.badge-info {
+  background-color: #17a2b8;
+}
+
+.badge-secondary {
+  background-color: #6c757d;
+}
+
+.badge-dark {
+  background-color: #343a40;
+}
+
+/* Table Enhancements */
+.table {
+  font-size: 0.875rem;
+  /* Removido scale local pois agora usa zoom global */
+}
+
+.table th {
+  border-top: none;
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* KPI Modal Table Specific Styles */
+#tabela-kpi-detalhes {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 900px;
+  max-width: 100%;
+}
+
+#tabela-kpi-detalhes th {
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 600;
+  vertical-align: middle;
+  padding: 8px 6px;
+  border: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+}
+
+#tabela-kpi-detalhes td {
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: 6px;
+  border: 1px solid #dee2e6;
+  box-sizing: border-box;
+}
+
+/* Fixed widths for KPI table columns - Distribuição otimizada */
+#tabela-kpi-detalhes th:nth-child(1),
+#tabela-kpi-detalhes td:nth-child(1) {
+  width: 80px !important; /* IPEN - fixado */
+  text-align: center !important;
+  min-width: 80px !important;
+  max-width: 80px !important;
+  overflow: hidden !important;
+}
+
+#tabela-kpi-detalhes th:nth-child(2),
+#tabela-kpi-detalhes td:nth-child(2) {
+  width: 220px !important; /* Nome do Interno - ajustado */
+  min-width: 180px !important;
+  max-width: 250px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  text-align: left !important;
+}
+
+#tabela-kpi-detalhes th:nth-child(3),
+#tabela-kpi-detalhes td:nth-child(3) {
+  width: 90px !important; /* Tipo Dívida */
+  text-align: center !important;
+  min-width: 80px !important;
+  max-width: 90px !important;
+  overflow: hidden !important;
+}
+
+#tabela-kpi-detalhes th:nth-child(4),
+#tabela-kpi-detalhes td:nth-child(4) {
+  width: 100px !important; /* Valor Original */
+  text-align: right !important;
+  min-width: 90px !important;
+  max-width: 100px !important;
+  overflow: hidden !important;
+}
+
+#tabela-kpi-detalhes th:nth-child(5),
+#tabela-kpi-detalhes td:nth-child(5) {
+  width: 100px !important; /* Valor Atual */
+  text-align: right !important;
+  min-width: 90px !important;
+  max-width: 100px !important;
+  font-weight: bold !important;
+  overflow: hidden !important;
+}
+
+#tabela-kpi-detalhes th:nth-child(6),
+#tabela-kpi-detalhes td:nth-child(6) {
+  width: 60px !important; /* % Desc. */
+  text-align: center !important;
+  min-width: 50px !important;
+  max-width: 60px !important;
+  overflow: hidden !important;
+}
+
+#tabela-kpi-detalhes th:nth-child(7),
+#tabela-kpi-detalhes td:nth-child(7) {
+  width: 80px !important; /* Status */
+  text-align: center !important;
+  min-width: 70px !important;
+  max-width: 80px !important;
+  overflow: hidden !important;
+}
+
+#tabela-kpi-detalhes th:nth-child(8),
+#tabela-kpi-detalhes td:nth-child(8) {
+  width: 100px !important; /* Data Cadastro/Data Lançamento */
+  text-align: center !important;
+  min-width: 90px !important;
+  max-width: 100px !important;
+  overflow: hidden !important;
+}
+
+#tabela-kpi-detalhes th:nth-child(9),
+#tabela-kpi-detalhes td:nth-child(9) {
+  width: 90px !important; /* Usuário */
+  text-align: center !important;
+  min-width: 80px !important;
+  max-width: 90px !important;
+  overflow: hidden !important;
+}
+
+/* Container fix para evitar overflow horizontal */
+.table-responsive {
+  overflow-x: auto;
+  max-height: 60vh;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Value highlighting */
+#tabela-kpi-detalhes td:nth-child(5) {
+  color: #155724;
+  font-weight: bold;
+}
+
+#tabela-kpi-detalhes td:nth-child(6) {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Status badges in KPI table */
+#tabela-kpi-detalhes .badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.4rem;
+  white-space: nowrap;
+}
+
+/* Modal adjustments */
+.modal-xl .modal-body {
+  padding: 1rem;
+}
+
+.modal-xl .table-responsive {
+  margin: 0;
+}
+
+/* Fix para alinhamento em telas pequenas */
+@media (max-width: 768px) {
+  #tabela-kpi-detalhes {
+    min-width: 700px;
+    font-size: 0.8rem;
+  }
+
+  #tabela-kpi-detalhes th:nth-child(2),
+  #tabela-kpi-detalhes td:nth-child(2) {
+    width: 200px;
+    max-width: 200px;
+  }
+
+  #tabela-kpi-detalhes th,
+  #tabela-kpi-detalhes td {
+    padding: 4px;
+  }
+
+  /* Reset COMPLETO e FORÇADO para tabela KPI */
+  #tabela-kpi-detalhes {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    table-layout: fixed !important;
+    width: 100% !important;
+    min-width: 900px !important;
+    max-width: 100% !important;
+    background: transparent !important;
+  }
+
+  #tabela-kpi-detalhes thead {
+    display: table-header-group !important;
+  }
+
+  #tabela-kpi-detalhes tbody {
+    display: table-row-group !important;
+  }
+
+  #tabela-kpi-detalhes tr {
+    display: table-row !important;
+  }
+
+  #tabela-kpi-detalhes th {
+    display: table-cell !important;
+    border: 1px solid #dee2e6 !important;
+    background-color: #f8f9fa !important;
+    color: #495057 !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+    padding: 8px 6px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  #tabela-kpi-detalhes td {
+    display: table-cell !important;
+    border: 1px solid #dee2e6 !important;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
+
+.table-responsive {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  overflow-x: auto;
+  max-height: 70vh;
+  /* Removido ajuste pois zoom global cuida disso */
+}
+
+/* Button Group Enhancements */
+.btn-group .btn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.btn-group .btn i {
+  font-size: 0.75rem;
+}
+
+/* Modal Enhancements */
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  font-weight: 600;
+  color: #495057;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Input Group Enhancements */
+.input-group-append .btn {
+  border-left: none;
+}
+
+.input-group .form-control {
+  border-right: none;
+}
+
+.input-group .form-control:focus {
+  border-right: 1px solid #80bdff;
+}
+
+/* Alert Enhancements */
+.alert {
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Pagination Enhancements */
+.pagination .page-link {
+  color: #007bff;
+  border-color: #dee2e6;
+}
+
+.pagination .page-link:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+
+/* Card Enhancements */
+.card {
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 600;
+}
+
+.card-title {
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Form Enhancements */
+.form-check-input:checked + .form-check-label::before {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Money Input Styling */
+.money {
+  text-align: right;
+  font-weight: 500;
+}
+
+/* Status Indicators */
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.status-indicator.active {
+  background-color: #28a745;
+}
+
+.status-indicator.inactive {
+  background-color: #dc3545;
+}
+
+.status-indicator.warning {
+  background-color: #ffc107;
+}
+
+/* Hover Effects */
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+/* Tooltips */
+.tooltip-inner {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #343a40;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .small-box {
+    margin-bottom: 1rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    border-radius: 0.25rem !important;
+    margin-bottom: 0.25rem;
+  }
+
+  .table-responsive {
+    font-size: 0.8rem;
+    max-height: 60vh;
+  }
+
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-body {
+    padding: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom Scrollbar for Tables */
+.table-responsive::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Focus States */
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Print Styles */
+@media print {
+  .btn,
+  .pagination,
+  .small-box {
+    display: none !important;
+  }
+
+  .table {
+    font-size: 0.8rem;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #dee2e6;
+  }
+}
+
+/* Loading Overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-overlay .spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 0.25rem solid #f3f3f3;
+  border-top: 0.25rem solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success/Error States */
+.form-control.is-valid {
+  border-color: #28a745;
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+}
+
+.form-control.is-valid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.form-control.is-invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Custom Checkbox Styling */
+.form-check-input:checked + .form-check-label {
+  color: #007bff;
+}
+
+/* Highlight Effects */
+.highlight {
+  background-color: #fff3cd !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Data Display */
+.data-value {
+  font-weight: 600;
+  color: #495057;
+}
+
+.data-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Status Colors */
+.status-pendente {
+  color: #856404;
+}
+
+.status-ativa {
+  color: #0c5460;
+}
+
+.status-suspensa {
+  color: #383d41;
+}
+
+.status-quitada {
+  color: #155724;
+}
+
+.status-inativa {
+  color: #6c757d;
+}

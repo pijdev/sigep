@@ -1,0 +1,57 @@
+/* assets/css/header.css */
+/* Estilos específicos para o header.php */
+
+/* Animações para notificações */
+.navbar-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos para dropdown de notificações */
+.dropdown-menu-lg {
+    width: 350px;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+/* Animação para o toggle de tema */
+#sigepDarkModeToggle {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#sigepDarkModeToggle:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para o menu do usuário */
+.user-menu .nav-link {
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.user-menu .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsividade para o header */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: row;
+    }
+    
+    .dropdown-menu-lg {
+        width: 280px;
+    }
+    
+    .user-header p {
+        font-size: 0.9rem;
+    }
+}

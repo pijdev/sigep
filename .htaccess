@@ -1,0 +1,195 @@
+# ======================================================================
+# SIGEP - Sistema de Gestão Prisional
+# Arquivo de configuração Apache (.htaccess)
+# Versão: 1.0.0
+# Data: 25/03/2026
+# Descrição: Regras de reescrita para URLs amigáveis e segurança
+# ======================================================================
+
+# Ativar o motor de reescrita
+RewriteEngine On
+
+# ======================================================================
+# AUTENTICAÇÃO - URLs Amigáveis
+# ======================================================================
+
+# Página principal de autenticação
+RewriteRule ^autenticacao/?$ auth/login.php [L,QSA]
+
+# Autenticação com mensagem de erro
+RewriteRule ^autenticacao/(.*)$ auth/login.php?msg=$1 [L,QSA]
+
+# Autenticação quiosque
+RewriteRule ^autenticacao/quiosque$ auth/kiosk_login.php [L,QSA]
+
+# ======================================================================
+# DASHBOARDS - URLs Amigáveis
+# ======================================================================
+
+# Dashboard Eclusa Movimentações
+RewriteRule ^dashboard/eclusa/?$ modulos/eclusa/movimentacoes/dashboard.php [L,QSA]
+
+# Dashboard Eclusa Escolta
+RewriteRule ^dashboard/eclusa_escolta/?$ modulos/eclusa/escolta/dashboard/index.php [L,QSA]
+
+# ======================================================================
+# MÓDULO ECLUSA - URLs Amigáveis
+# ======================================================================
+
+# Movimentações Eclusa
+RewriteRule ^eclusa/movimentacoes/?$ modulos/eclusa/movimentacoes/movimentacoes_view.php [L,QSA]
+
+# Relatório de Movimentações Eclusa
+RewriteRule ^eclusa/movimentacoes/relatorio/?$ modulos/eclusa/movimentacoes/relatorio.php [L,QSA]
+
+# Dashboard Movimentações Eclusa
+RewriteRule ^eclusa/movimentacoes/dashboard/?$ modulos/eclusa/movimentacoes/dashboard/dashboard_view.php [L,QSA]
+
+# Escolta Eclusa
+RewriteRule ^eclusa/escolta/?$ modulos/eclusa/escolta/escolta_view.php [L,QSA]
+
+# Relatório de Escoltas Eclusa
+RewriteRule ^eclusa/escolta/relatorio/?$ modulos/eclusa/escolta/relatorio.php [L,QSA]
+
+# ======================================================================
+# MÓDULO CENSURA - URLs Amigáveis
+# ======================================================================
+
+# Cartas Censura
+RewriteRule ^censura/cartas/?$ modulos/censura/cartas/cartas_view.php [L,QSA]
+
+# Recibo de Retorno - Cartas
+RewriteRule ^censura/cartas/recibo-retorno/?$ modulos/censura/cartas/recibo_retorno_remetente.php [L,QSA]
+
+# Termo de Doação Censura
+RewriteRule ^censura/doacao/termo-censura/?$ modulos/censura/doacao/termo_doacao_censura.php [L,QSA]
+
+# Termo de Doação para Cela
+RewriteRule ^censura/doacao/termo-cela/?$ modulos/censura/doacao/termo_doacao_para_cela.php [L,QSA]
+
+# Termo de Doação de Interno para Interno
+RewriteRule ^censura/doacao/termo-interno/?$ modulos/censura/doacao/termo_doacao_para_interno.php [L,QSA]
+
+# Controle de Manutenções Censura
+RewriteRule ^censura/manutencao/?$ modulos/censura/manutencao/manutencao_view.php [L,QSA]
+
+# Controle Manual de Manutenções Censura
+RewriteRule ^manutencao/controle-manual/?$ modulos/censura/manutencao/manutencao_controle_manual.php [L,QSA]
+
+# Relatório de Itens na Cela Censura
+RewriteRule ^censura/relatorio-itens-cela/?$ modulos/censura/internos_itens/relatorio_itens_cela_manual.php [L,QSA]
+
+# Relatório de Itens Cadastrados Censura
+RewriteRule ^censura/relatorio-itens-cadastrados/?$ modulos/censura/internos_itens/relatorio_itens_cadastrados.php [L,QSA]
+
+# ======================================================================
+# MÓDULO LABORAL - URLs Amigáveis
+# ======================================================================
+
+# Controle de Dívidas Laboral
+RewriteRule ^laboral/controle-dividas/?$ modulos/laboral/controle_dividas/controle_dividas_view.php [L,QSA]
+
+# Relatórios de Controle de Dívidas
+RewriteRule ^laboral/controle-dividas/relatorio-dividas/?$ modulos/laboral/controle_dividas/relatorios/relatorio_dividas.php [L,QSA]
+RewriteRule ^laboral/controle-dividas/relatorio-descontos-mes/?$ modulos/laboral/controle_dividas/relatorios/relatorio_descontos_mes.php [L,QSA]
+RewriteRule ^laboral/controle-dividas/relatorio-historico/?$ modulos/laboral/controle_dividas/relatorios/relatorio_historico_divida.php [L,QSA]
+RewriteRule ^laboral/controle-dividas/relatorio-inadimplentes/?$ modulos/laboral/controle_dividas/relatorios/relatorio_inadimplentes.php [L,QSA]
+
+# Lista de Trabalho Laboral
+RewriteRule ^laboral/lista-trabalho/?$ modulos/laboral/lista_trabalho/lista_trabalho_view.php [L,QSA]
+
+# Relatório de Colchões
+RewriteRule ^relatorios/relatorio-colchoes/?$ paginas/relatorios/relatorio_colchoes.php [L,QSA]
+
+# ======================================================================
+# MÓDULO SEGURANÇA - URLs Amigáveis
+# ======================================================================
+
+# Gestão de Contas e Acessos Segurança
+RewriteRule ^seguranca/gestao-contas/?$ modulos/seguranca/gestao_contas/gestao_contas_view.php [L,QSA]
+
+# ======================================================================
+# MÓDULO COORDENAÇÃO - URLs Amigáveis
+# ======================================================================
+
+# Medidas Disciplinares
+RewriteRule ^medidas-disciplinares/?$ modulos/coordenacao/medidas_disciplinares/md_view.php [L,QSA]
+
+# ======================================================================
+# MÓDULO GERAL - URLs Amigáveis
+# ======================================================================
+
+# Em Construção
+RewriteRule ^em-construcao/?$ modulos/geral/em_construcao/em_construcao_view.php [L,QSA]
+
+# Cadastro de Internos
+RewriteRule ^ferramentas/cadastro-internos/?$ modulos/geral/cadastro_internos/cadastro_internos_view.php [L,QSA]
+
+# ======================================================================
+# MÓDULO SERVIÇOS - URLs Amigáveis
+# ======================================================================
+
+# MySQL Adminer
+RewriteRule ^ferramentas/servicos/mysql/?$ modulos/servicos/adminer/adminer_view.php [L,QSA]
+
+# Canais de Notificações
+RewriteRule ^servicos/canais/?$ modulos/servicos/canais/canais_view.php [L,QSA]
+
+# Agendador de Tarefas
+RewriteRule ^ferramentas/servicos/agendador-tarefas/?$ modulos/servicos/job_manager/job_manager_view.php [L,QSA]
+
+# ======================================================================
+# API v1 - Endpoints Organizados
+# ======================================================================
+
+# API v1: Bancos Brasileiros (Febraban)
+RewriteRule ^api/v1/bancos_br_febraban$ api/v1/endpoints/bancos_br_febraban.php [L,QSA]
+
+# API v1: Genérico para endpoints
+RewriteRule ^api/v1/([a-zA-Z0-9_-]+)$ api/v1/endpoints/$1.php [L,QSA]
+
+# ======================================================================
+# PÁGINAS DE ERRO - URLs Amigáveis
+# ======================================================================
+
+# Página de erro genérica (com parâmetro código)
+RewriteRule ^erro/?$ modulos/servicos/paginas_erro/erro_view.php [L,QSA]
+
+# Páginas de erro específicas
+RewriteRule ^erro\?([0-9]{3})/?$ modulos/servicos/paginas_erro/erro_view.php?codigo=$1 [L,QSA]
+RewriteRule ^erro\?404/?$ modulos/servicos/paginas_erro/erro_view.php?codigo=404 [L,QSA]
+RewriteRule ^erro\?403/?$ modulos/servicos/paginas_erro/erro_view.php?codigo=403 [L,QSA]
+RewriteRule ^erro\?500/?$ modulos/servicos/paginas_erro/erro_view.php?codigo=500 [L,QSA]
+RewriteRule ^erro\?503/?$ modulos/servicos/paginas_erro/erro_view.php?codigo=503 [L,QSA]
+
+# Formato alternativo (sem o ?)
+RewriteRule ^erro/([0-9]{3})/?$ modulos/servicos/paginas_erro/erro_view.php?codigo=$1 [L,QSA]
+RewriteRule ^erro/404/?$ modulos/servicos/paginas_erro/erro_view.php?codigo=404 [L,QSA]
+RewriteRule ^erro/403/?$ modulos/servicos/paginas_erro/erro_view.php?codigo=403 [L,QSA]
+RewriteRule ^erro/500/?$ modulos/servicos/paginas_erro/erro_view.php?codigo=500 [L,QSA]
+RewriteRule ^erro/503/?$ modulos/servicos/paginas_erro/erro_view.php?codigo=503 [L,QSA]
+
+# ======================================================================
+# PÁGINAS ESPECIAIS - URLs Amigáveis
+# ======================================================================
+
+# Termo de Doação Eletrônicos (com ID)
+RewriteRule ^termo-doacao-eletronicos/([0-9]+)/?$ paginas/imprimir_termo_doacao_eletronicos.php?id=$1 [L,QSA]
+
+# ======================================================================
+# ARQUIVOS ESTÁTICOS - Redirecionamentos
+# ======================================================================
+
+# Favicon
+RewriteRule ^favicon\.ico$ /favicon.svg [L,QSA]
+
+# ======================================================================
+# SEGURANÇA - Prevenção de Acesso a Arquivos Sensíveis
+# ======================================================================
+
+# Bloquear acesso direto a arquivos de configuração e dados sensíveis
+RewriteRule \.(sql|md|log|bak|env|ini|conf)$ - [F,L]
+
+# ======================================================================
+# FIM DO ARQUIVO
+# ======================================================================

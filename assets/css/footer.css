@@ -1,0 +1,54 @@
+/* assets/css/footer.css */
+/* Estilos específicos para o footer.php */
+
+/* Animações para o footer */
+.main-footer {
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #343a40 0%, #495057 100%);
+}
+
+/* Estilos para links do footer */
+.main-footer a {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.main-footer a:hover {
+    color: #17a2b8 !important;
+    transform: translateY(-2px);
+}
+
+/* Animações para ícones */
+.main-footer .fas {
+    transition: transform 0.3s ease;
+}
+
+.main-footer .fas:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Estilos para texto de copyright */
+.text-muted {
+    transition: color 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-footer {
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .main-footer .float-right {
+        float: none !important;
+        margin-top: 10px;
+    }
+}
+
+/* Dark mode adjustments */
+.dark-mode .main-footer {
+    background: linear-gradient(135deg, #1e293b 0%, #0c0e10 100%);
+}
+
+.dark-mode .main-footer a:hover {
+    color: #3b82f6 !important;
+}

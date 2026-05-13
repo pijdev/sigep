@@ -1,0 +1,490 @@
+/* Dashboard de Escoltas - SIGEP */
+/* Custom styles para o dashboard de escoltas */
+
+.info-box {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.info-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.info-box-icon {
+    border-radius: 8px 0 0 8px;
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.chart {
+    position: relative;
+}
+
+.badge {
+    font-size: 0.75em;
+}
+
+.modal-xl {
+    max-width: 95%;
+}
+
+.table-responsive {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.preloader {
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 9999;
+}
+
+/* Cores específicas para escoltas */
+.bg-teal {
+    background-color: #20c997 !important;
+}
+
+.bg-purple {
+    background-color: #6f42c1 !important;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+body.dark-mode .info-box {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+
+body.dark-mode .info-box-text {
+    color: #cbd5e0;
+}
+
+body.dark-mode .info-box-number {
+    color: #fff;
+}
+
+body.dark-mode .card {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #fff;
+}
+
+body.dark-mode .card-header {
+    background-color: #374151;
+    border-bottom-color: #4a5568;
+    color: #fff;
+}
+
+body.dark-mode .table {
+    color: #fff;
+}
+
+body.dark-mode .table thead th {
+    background-color: #374151;
+    border-color: #4a5568;
+    color: #fff;
+}
+
+body.dark-mode .table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+body.dark-mode .form-control {
+    background-color: #374151;
+    border-color: #4a5568;
+    color: #fff;
+}
+
+body.dark-mode .form-control:focus {
+    background-color: #4a5568;
+    border-color: #3182ce;
+    color: #fff;
+}
+
+body.dark-mode .main-header {
+    background-color: #1a1a1a;
+    border-bottom-color: #4a5568;
+}
+
+body.dark-mode .main-header .navbar-nav .nav-link {
+    color: #cbd5e0;
+}
+
+body.dark-mode .main-header .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+body.dark-mode .content-wrapper {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .content-header {
+    background-color: #1a1a1a;
+    border-bottom-color: #4a5568;
+}
+
+body.dark-mode .breadcrumb-item {
+    color: #cbd5e0;
+}
+
+body.dark-mode .breadcrumb-item.active {
+    color: #fff;
+}
+
+body.dark-mode .table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+/* Estilos para Impressão Otimizada */
+@media print {
+
+    /* Configuração da página */
+    @page {
+        size: A4 landscape;
+        margin: 15mm;
+    }
+
+    /* Ocultar elementos desnecessários */
+    .main-header,
+    .main-sidebar,
+    .content-header,
+    .card-tools .btn-group,
+    .breadcrumb,
+    .preloader {
+        display: none !important;
+    }
+
+    /* Corpo da página */
+    body {
+        font-size: 8pt;
+        line-height: 1.1;
+        color: #000;
+        background: #fff;
+        margin: 0;
+        padding: 10px;
+    }
+
+    /* Container principal */
+    .content-wrapper {
+        background: #fff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+    }
+
+    /* Cards */
+    .card {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+        margin-bottom: 10px !important;
+        page-break-inside: avoid;
+    }
+
+    .card-header {
+        background: #f0f0f0 !important;
+        border-bottom: 1px solid #000 !important;
+        color: #000 !important;
+    }
+
+    .card-body {
+        padding: 5px !important;
+    }
+
+    /* Tabela otimizada para impressão */
+    .table-responsive {
+        overflow: visible !important;
+        max-height: none !important;
+        margin: 0 !important;
+    }
+
+    .table {
+        font-size: 7pt !important;
+        table-layout: fixed !important;
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid #000 !important;
+        padding: 2px 3px !important;
+        text-align: left !important;
+        vertical-align: top !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        font-size: 7pt !important;
+    }
+
+    .table th {
+        background: #f0f0f0 !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        font-size: 7pt !important;
+    }
+
+    /* Larguras fixas para colunas na impressão */
+    .table th:nth-child(1),
+    .table td:nth-child(1) {
+        width: 50px !important;
+        min-width: 50px !important;
+    }
+
+    /* Data */
+
+    .table th:nth-child(2),
+    .table td:nth-child(2) {
+        width: 100px !important;
+        min-width: 100px !important;
+    }
+
+    /* Interno */
+
+    .table th:nth-child(3),
+    .table td:nth-child(3) {
+        width: 130px !important;
+        min-width: 130px !important;
+    }
+
+    /* Destino */
+
+    .table th:nth-child(4),
+    .table td:nth-child(4) {
+        width: 80px !important;
+        min-width: 80px !important;
+    }
+
+    /* Motorista */
+
+    .table th:nth-child(5),
+    .table td:nth-child(5) {
+        width: 50px !important;
+        min-width: 50px !important;
+    }
+
+    /* Placa */
+
+    .table th:nth-child(6),
+    .table td:nth-child(6) {
+        width: 60px !important;
+        min-width: 60px !important;
+    }
+
+    /* Status */
+
+    .table th:nth-child(7),
+    .table td:nth-child(7) {
+        width: 35px !important;
+        min-width: 35px !important;
+    }
+
+    /* NOT */
+
+    .table th:nth-child(8),
+    .table td:nth-child(8) {
+        width: 60px !important;
+        min-width: 60px !important;
+    }
+
+    /* Hora Prevista */
+
+    .table th:nth-child(9),
+    .table td:nth-child(9) {
+        width: 60px !important;
+        min-width: 60px !important;
+    }
+
+    /* Hora Chegada */
+
+    .table th:nth-child(10),
+    .table td:nth-child(10) {
+        width: 60px !important;
+        min-width: 60px !important;
+    }
+
+    /* Hora Retorno */
+
+    .table th:nth-child(11),
+    .table td:nth-child(11) {
+        width: 80px !important;
+        min-width: 80px !important;
+    }
+
+    /* Motivo */
+
+    .table th:nth-child(12),
+    .table td:nth-child(12) {
+        width: 80px !important;
+        min-width: 80px !important;
+    }
+
+    /* Cadastrado Por */
+
+    /* Converter badges para texto */
+    .badge {
+        background: none !important;
+        color: #000 !important;
+        padding: 0 !important;
+        font-size: 7pt !important;
+        font-weight: normal !important;
+    }
+
+    /* Evitar quebra de linha */
+    .table tbody tr {
+        page-break-inside: avoid !important;
+    }
+
+    /* Manter elementos visuais importantes */
+    .info-box {
+        display: block !important;
+        border: 1px solid #000 !important;
+        background: #f9f9f9 !important;
+        margin-bottom: 10px !important;
+        page-break-inside: avoid;
+    }
+
+    .info-box-icon {
+        display: none !important;
+    }
+
+    .info-box-content {
+        text-align: center !important;
+        padding: 5px !important;
+    }
+
+    .info-box-text {
+        font-size: 9pt !important;
+        color: #000 !important;
+        display: block !important;
+    }
+
+    .info-box-number {
+        font-size: 12pt !important;
+        font-weight: bold !important;
+        color: #000 !important;
+        display: block !important;
+    }
+
+    .chart {
+        display: block !important;
+        border: 1px solid #000 !important;
+        height: 150px !important;
+        margin-bottom: 15px !important;
+        page-break-inside: avoid;
+    }
+
+    .chart canvas {
+        max-height: 140px !important;
+    }
+
+    /* Cabeçalho da impressão */
+    .card:last-child .card-header:before {
+        content: "RELATORIO DE ESCOLTAS - SIGEP";
+        display: block;
+        font-size: 12pt;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Rodapé da impressão */
+    .card:last-child:after {
+        content: "Sistema de Gestao Prisional - SIGEP | Secretaria de Administracao Prisional - SC";
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 8pt;
+        color: #666;
+        border-top: 1px solid #ccc;
+        padding-top: 5px;
+    }
+}
+
+/* Estilos para tela, mantendo responsividade */
+@media screen and (max-width: 768px) {
+    .info-box {
+        margin-bottom: 1rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .modal-xl {
+        max-width: 100%;
+        margin: 10px;
+    }
+
+    /* Tabela responsiva em tela */
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Custom scrollbar */
+.table-responsive::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Dark mode scrollbar */
+body.dark-mode .table-responsive::-webkit-scrollbar-track {
+    background: #2d3748;
+}
+
+body.dark-mode .table-responsive::-webkit-scrollbar-thumb {
+    background: #4a5568;
+}
+
+body.dark-mode .table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}

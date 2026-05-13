@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="56" viewBox="0 0 120 56">
+  <rect width="120" height="56" fill="#2c5aa0"/>
+  <text x="60" y="28" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="bold">
+    SAP
+  </text>
+  <text x="60" y="42" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">
+    SIGEP
+  </text>
+</svg>

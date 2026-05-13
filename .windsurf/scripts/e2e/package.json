@@ -1,0 +1,17 @@
+{
+  "name": "sigep-e2e-health-check",
+  "version": "1.0.0",
+  "description": "E2E Health Check Test for SIGEP System",
+  "main": "test_sigep_health.js",
+  "scripts": {
+    "test": "node test_sigep_health.js",
+    "install-deps": "npm install puppeteer",
+    "health": "node test_sigep_health.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  },
+  "keywords": ["e2e", "health-check", "sigep", "puppeteer"],
+  "author": "Cascade AI",
+  "license": "MIT"
+}

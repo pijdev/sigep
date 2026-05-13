@@ -1,0 +1,462 @@
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #dee2e6;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #007bff;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #007bff;
+}
+
+.timeline-item.entrada::before {
+    background: #28a745;
+    border-color: #28a745;
+    box-shadow: 0 0 0 2px #28a745;
+}
+
+.timeline-item.saida::before {
+    background: #dc3545;
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px #dc3545;
+}
+
+.timeline-item.cancelado::before {
+    background: #6c757d;
+    border-color: #6c757d;
+    box-shadow: 0 0 0 2px #6c757d;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -23px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.timeline-content {
+    margin-left: 0;
+}
+
+.timeline-marker i {
+    font-size: 14px;
+}
+
+/* Notificações */
+.cartas-notificacao {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+/* Cores suaves para campos de busca no modal */
+#buscaInterno, #buscaCorrespondente {
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+    transition: all 0.2s ease;
+}
+
+#buscaInterno:focus, #buscaCorrespondente:focus {
+    background-color: #fff3cd;
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+#buscaInterno:hover, #buscaCorrespondente:hover {
+    background-color: #e9ecef;
+}
+
+/* Status Pills */
+.status-pill {
+    font-size: .75rem;
+    border-radius: 20px;
+    padding: 3px 8px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-liberada {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-retida {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-devolvida {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.status-cancelado {
+    background: #6c757d;
+    color: #fff;
+}
+
+.status-entrada {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-saida {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Search Results */
+.search-results {
+    position: absolute;
+    width: 100%;
+    z-index: 1051;
+    background: #fff;
+    border: 1px solid #ddd;
+    max-height: 220px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.search-item {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.search-item:hover {
+    background: #f0f7ff;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+/* Cards Enhancement */
+.small-box {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.small-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Loading States */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #6c757d;
+}
+
+.loading-spinner i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Empty States */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .small-box {
+        margin-bottom: 1rem;
+    }
+    
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-item::before {
+        left: -20px;
+        width: 10px;
+        height: 10px;
+    }
+    
+    .timeline-marker {
+        left: -18px;
+        width: 25px;
+        height: 25px;
+        font-size: 10px;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Dark Mode Support */
+body.dark-mode .search-results {
+    background: #3f474e;
+    border-color: #6c757d;
+}
+
+body.dark-mode .search-item {
+    color: #fff;
+    border-bottom-color: #56606a;
+}
+
+body.dark-mode .search-item:hover {
+    background: #4b545c;
+}
+
+body.dark-mode #buscaInterno,
+body.dark-mode #buscaCorrespondente {
+    background-color: #3f474e;
+    border-color: #6c757d;
+    color: #fff;
+}
+
+body.dark-mode #buscaInterno:focus,
+body.dark-mode #buscaCorrespondente:focus {
+    background-color: #56606a;
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+body.dark-mode .timeline::before {
+    background: #6c757d;
+}
+
+body.dark-mode .timeline-marker {
+    background: #3f474e;
+    border-color: #6c757d;
+}
+
+/* Table Enhancements */
+.table-hover tbody tr:hover {
+    background-color: rgba(0,0,0,.075);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.02);
+}
+
+/* Modal Enhancements */
+.modal-content {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.modal-header .close {
+    color: white;
+    opacity: 0.8;
+}
+
+.modal-header .close:hover {
+    opacity: 1;
+}
+
+/* Button Enhancements */
+.btn-group .btn {
+    border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+/* Form Enhancements */
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Badge Enhancements */
+.badge {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+/* Alert Enhancements */
+.alert {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+    color: #212529;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
+    color: white;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #007bff 100%);
+    color: white;
+}
+
+/* Card Enhancements */
+.card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    border-radius: 0.5rem;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom: none;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Progress Bar Enhancements */
+.progress {
+    height: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.progress-bar {
+    border-radius: 0.25rem;
+}
+
+/* Tooltip Enhancements */
+.tooltip {
+    font-size: 0.875rem;
+}
+
+.tooltip-inner {
+    background-color: #333;
+    border-radius: 0.25rem;
+}
+
+/* Pagination Enhancements */
+.pagination .page-link {
+    border: none;
+    color: #007bff;
+    margin: 0 2px;
+    border-radius: 0.25rem;
+}
+
+.pagination .page-link:hover {
+    background-color: #e9ecef;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Dropdown Enhancements */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    border-radius: 0.5rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Custom Scrollbar */
+.search-results::-webkit-scrollbar {
+    width: 6px;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

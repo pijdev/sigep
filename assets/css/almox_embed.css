@@ -1,0 +1,86 @@
+/* assets/css/almox_embed.css */
+/* Estilos específicos para almox_embed.php */
+
+.iframe-full {
+    width: 100%;
+    height: calc(100vh - 110px); 
+    border: 1px solid #dee2e6;
+    display: block;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Animações de carregamento */
+.iframe-loading {
+    position: relative;
+}
+
+.iframe-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.iframe-loading::after {
+    content: '\f1ce';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 2rem;
+    color: #007bff;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .iframe-full {
+        height: calc(100vh - 120px);
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .iframe-full {
+        height: calc(100vh - 130px);
+    }
+}
+
+/* Dark mode adjustments */
+.dark-mode .iframe-full {
+    border-color: #495057;
+    background-color: #2d3748;
+}
+
+/* Estados de erro */
+.iframe-error {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+}
+
+.iframe-error::before {
+    background: rgba(220, 53, 69, 0.1);
+}
+
+/* Estados de sucesso */
+.iframe-loaded {
+    border-color: #28a745;
+    transition: border-color 0.3s ease;
+}

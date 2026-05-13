@@ -1,0 +1,39 @@
+/* assets/css/index.css */
+/* Estilos específicos para a página index.php */
+
+/* Estilos para os cards de boas-vindas */
+.welcome-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o callout de navegação */
+.navigation-callout {
+    border-left: 4px solid #17a2b8;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Animações suaves */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .welcome-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .navigation-callout h5 {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,421 @@
+/**
+ * SIGEP - Estilos das Páginas de Erro
+ * Estilos modernos e responsivos para páginas de erro
+ * 
+ * @version 1.0.0
+ * @author SIGEP Development Team
+ */
+
+/* Container principal da página de erro */
+.error-page-wrapper {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    margin: 1rem;
+}
+
+/* Box do erro */
+.error-box-modern {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    padding: 3rem;
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ícone do erro */
+.error-icon-modern {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    animation: bounce 2s infinite;
+    display: inline-block;
+}
+
+.error-icon-modern.text-warning {
+    color: #ffc107;
+    text-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+}
+
+.error-icon-modern.text-danger {
+    color: #dc3545;
+    text-shadow: 0 0 20px rgba(220, 53, 69, 0.3);
+}
+
+.error-icon-modern.text-info {
+    color: #17a2b8;
+    text-shadow: 0 0 20px rgba(23, 162, 184, 0.3);
+}
+
+/* Código do erro */
+.error-code-modern {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Título do erro */
+.error-title-modern {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Descrição do erro */
+.error-description-modern {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Ações do erro */
+.error-actions-modern {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+/* Botões modernos */
+.btn-error-modern {
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-error-modern.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-error-modern.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-error-modern.btn-secondary {
+    background: #6c757d;
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.btn-error-modern.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(108, 117, 125, 0.4);
+}
+
+/* Caixa de busca */
+.error-search-box {
+    margin: 2rem 0;
+    position: relative;
+}
+
+.error-search-box input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.error-search-box input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background: white;
+}
+
+.error-search-box button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #667eea;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.error-search-box button:hover {
+    background: #5a6fd8;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Detalhes do erro */
+.error-details-modern {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #666;
+    border-left: 4px solid #667eea;
+}
+
+/* Cards de erro para SPA */
+.error-card-spa {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.error-card-spa .card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.error-card-spa .card-body {
+    padding: 2rem;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Estados específicos */
+.error-404 .error-icon-modern {
+    animation: bounce 2s infinite, shake 0.5s ease-in-out;
+}
+
+.error-403 .error-icon-modern {
+    animation: pulse 2s infinite;
+}
+
+.error-500 .error-icon-modern {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .error-box-modern {
+        padding: 2rem 1.5rem;
+        margin: 0.5rem;
+    }
+    
+    .error-icon-modern {
+        font-size: 4rem;
+    }
+    
+    .error-code-modern {
+        font-size: 3.5rem;
+    }
+    
+    .error-title-modern {
+        font-size: 1.5rem;
+    }
+    
+    .error-actions-modern {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-error-modern {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .error-search-box input {
+        padding: 0.75rem 3rem 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-page-wrapper {
+        padding: 1rem;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .error-box-modern {
+        padding: 1.5rem 1rem;
+    }
+    
+    .error-icon-modern {
+        font-size: 3rem;
+    }
+    
+    .error-code-modern {
+        font-size: 2.5rem;
+    }
+    
+    .error-title-modern {
+        font-size: 1.25rem;
+    }
+    
+    .error-description-modern {
+        font-size: 1rem;
+    }
+}
+
+/* Modo escuro (se suportado) */
+@media (prefers-color-scheme: dark) {
+    .error-box-modern {
+        background: rgba(30, 30, 30, 0.95);
+        color: white;
+    }
+    
+    .error-title-modern {
+        color: white;
+    }
+    
+    .error-description-modern {
+        color: #ccc;
+    }
+    
+    .error-search-box input {
+        background: rgba(50, 50, 50, 0.9);
+        border-color: #555;
+        color: white;
+    }
+    
+    .error-search-box input:focus {
+        background: rgba(60, 60, 60, 0.95);
+    }
+    
+    .error-details-modern {
+        background: rgba(0, 0, 0, 0.2);
+        color: #ccc;
+    }
+}
+
+/* Temas específicos por erro */
+.error-404 {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+}
+
+.error-403 {
+    background: linear-gradient(135deg, #ff7675 0%, #fd79a8 100%);
+}
+
+.error-500 {
+    background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+}
+
+.error-503 {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+}
+
+/* Loading spinner para erros de carregamento */
+.error-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Efeitos hover */
+.error-box-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.btn-error-modern:hover {
+    transform: translateY(-2px);
+}
+
+/* Transições suaves */
+.error-box-modern,
+.error-icon-modern,
+.error-code-modern,
+.error-title-modern,
+.error-description-modern,
+.btn-error-modern {
+    transition: all 0.3s ease;
+}
+
+/* Acessibilidade */
+.error-box-modern:focus-within {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.btn-error-modern:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .error-box-modern {
+        border: 2px solid #000;
+    }
+    
+    .btn-error-modern {
+        border: 2px solid #000;
+    }
+}

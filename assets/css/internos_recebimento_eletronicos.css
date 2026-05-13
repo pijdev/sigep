@@ -1,0 +1,641 @@
+/* Estilos base AdminLTE4 melhorados */
+
+:root {
+    --admin-bg: #f4f6f9;
+    --card-radius: 10px;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+[data-bs-theme="dark"] {
+    --admin-bg: #121212;
+}
+
+body {
+    background-color: var(--admin-bg);
+    transition: background 0.3s;
+    overflow-x: hidden;
+}
+
+/* Cards melhorados */
+.card {
+    border-radius: var(--card-radius);
+    border: none;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+
+/* Tabela responsiva */
+.table-responsive {
+    border-radius: 0 0 var(--card-radius) var(--card-radius);
+}
+
+/* Offcanvas melhorado */
+.offcanvas {
+    width: 500px !important;
+    border: none;
+    box-shadow: var(--card-shadow);
+}
+
+@media (max-width: 768px) {
+    .offcanvas {
+        width: 100% !important;
+    }
+}
+
+/* Estilos para Chuveiros - Não selecionáveis */
+.chuveiro-item {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}
+
+.chuveiro-item:hover {
+    opacity: 0.6;
+}
+
+/* Linha inteira do chuveiro com visual diferenciado */
+tr:has(.chuveiro-item) {
+    background-color: rgba(255, 193, 7, 0.1) !important;
+    border-left: 4px solid #ffc107 !important;
+}
+
+tr:has(.chuveiro-item):hover {
+    background-color: rgba(255, 193, 7, 0.2) !important;
+}
+
+/* Badge especial para chuveiros */
+tr:has(.chuveiro-item) .badge {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+}
+
+/* Tooltip visual adicional */
+tr:has(.chuveiro-item) td:first-child::after {
+    content: "🔧";
+    position: absolute;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+/* Botões e controles */
+.sortable {
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.sortable:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* Tema toggle (opcional para futuro) */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1060;
+}
+
+/* Melhorias na busca */
+.search-results {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.search-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+/* Offcanvas items */
+.offcanvas-item-card {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.offcanvas-item-header {
+    background: #f8f9fa;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.offcanvas-item-header:hover {
+    background: #e9ecef;
+}
+
+.offcanvas-item-details {
+    padding: 12px 16px;
+    background: #fff;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Pagination melhorada */
+.card-footer .pagination {
+    margin: 0;
+}
+
+.card-footer .text-muted {
+    font-size: 0.875rem;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    .content .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+.search-results { position: absolute; width: 100%; z-index: 1000; background: white; border: 1px solid #ddd; display: none; }
+
+.search-item { padding: 10px; cursor: pointer; border-bottom: 1px solid #eee; }
+
+.search-item:hover { background-color: #f0f4ff; }
+
+.item-card { border: 1px solid #dee2e6; border-radius: 5px; padding: 10px; margin-bottom: 10px; transition: 0.3s; }
+
+.item-card.selected { background-color: #e8f5e9; border-color: #28a745; border-width: 2px; }
+
+/* Dark Mode */
+
+body.dark-mode .search-results { background-color: #343a40; border-color: #6c757d; }
+
+body.dark-mode .search-item { color: #fff; border-bottom-color: #6c757d; }
+
+body.dark-mode .search-item:hover { background-color: #3f474e; }
+
+body.dark-mode .item-card { background-color: #343a40; border-color: #6c757d; }
+
+body.dark-mode .item-card.selected { background-color: #1e3a23; border-color: #28a745; }
+
+body.dark-mode .table-hover tbody tr:hover { background-color: rgba(255,255,255,0.05); }
+
+/* Botão de Registro no Dark Mode */
+
+body.dark-mode .btn-register-custom {
+
+    background-color: #007bff !important;
+
+    border-color: #007bff !important;
+
+    color: white !important;
+
+}
+
+/* Offcanvas custom (compatível com Bootstrap 4) */
+
+.offcanvas-backdrop-custom {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 1040;
+
+}
+
+.offcanvas-custom {
+
+    position: fixed;
+
+    top: 0;
+
+    right: 0;
+
+    height: 100vh;
+
+    width: 600px;
+
+    max-width: 90vw;
+
+    transform: translateX(100%);
+
+    transition: transform 0.25s ease;
+
+    background: #fff;
+
+    color: #333;
+
+    z-index: 1050;
+
+    box-shadow: -8px 0 20px rgba(0,0,0,0.2);
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.offcanvas-custom.show {
+
+    transform: translateX(0);
+
+}
+
+.offcanvas-custom-header {
+
+    padding: 16px 20px;
+
+    background: #007bff;
+
+    color: white;
+
+    border-bottom: 1px solid #dee2e6;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-shrink: 0;
+
+}
+
+.offcanvas-custom-header h5 {
+
+    margin: 0;
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+}
+
+.offcanvas-custom-header .close {
+
+    background: none;
+
+    border: none;
+
+    font-size: 1.5rem;
+
+    color: rgba(255,255,255,0.8);
+
+    opacity: 0.8;
+
+    transition: opacity 0.2s;
+
+}
+
+.offcanvas-custom-header .close:hover {
+
+    opacity: 1;
+
+}
+
+.offcanvas-custom-body {
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    flex: 1;
+
+    background: #fff;
+
+}
+
+
+
+.offcanvas-custom-body .alert {
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+}
+
+
+
+.offcanvas-custom-body .card {
+
+    border-radius: 8px;
+
+    border: 1px solid #dee2e6;
+
+    margin-bottom: 20px;
+
+    background: #fff;
+
+}
+
+
+
+.offcanvas-custom-body .card:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+.offcanvas-custom-body .card-header {
+
+    background: #f8f9fa;
+
+    border-bottom: 1px solid #dee2e6;
+
+    padding: 12px 16px;
+
+    border-radius: 8px 8px 0 0;
+
+}
+
+
+
+.offcanvas-custom-body .card-body {
+
+    padding: 16px;
+
+}
+
+
+
+.offcanvas-custom-body .form-group {
+
+    margin-bottom: 16px;
+
+}
+
+
+
+.offcanvas-custom-body .form-group:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+.offcanvas-custom-body .form-label {
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    color: #333;
+
+}
+
+
+
+.offcanvas-custom-body .form-control {
+
+    border-radius: 6px;
+
+    border: 1px solid #ced4da;
+
+    padding: 10px 12px;
+
+    font-size: 14px;
+
+    background: #fff;
+
+    color: #333;
+
+}
+
+
+
+.offcanvas-custom-body .form-control:focus {
+
+    border-color: #007bff;
+
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+
+}
+
+
+
+.offcanvas-custom-body .form-control[readonly] {
+
+    background-color: #f8f9fa;
+
+    font-weight: 600;
+
+}
+
+
+
+.offcanvas-custom-body .input-group {
+
+    display: flex;
+
+    align-items: stretch;
+
+}
+
+
+
+.offcanvas-custom-body .input-group .form-control {
+
+    flex: 1;
+
+}
+
+
+
+.offcanvas-custom-body .input-group-append {
+
+    display: flex;
+
+    margin-left: -1px;
+
+}
+
+
+
+.offcanvas-custom-body .input-group-text {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 10px 12px;
+
+    margin-bottom: 0;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    color: #495057;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    background-color: #e9ecef;
+
+    border: 1px solid #ced4da;
+
+    border-radius: 0 6px 6px 0;
+
+}
+
+
+
+.offcanvas-custom-body .btn {
+
+    border-radius: 6px;
+
+    padding: 10px 16px;
+
+    font-weight: 500;
+
+    transition: all 0.2s;
+
+}
+
+
+
+.offcanvas-custom-body .btn:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+
+.offcanvas-custom-body .text-danger {
+
+    color: #dc3545 !important;
+
+}
+
+
+
+.offcanvas-custom-body .text-warning {
+
+    color: #ffc107 !important;
+
+}
+
+
+
+.offcanvas-custom-body .text-info {
+
+    color: #17a2b8 !important;
+
+}
+
+
+
+.offcanvas-custom-body .font-weight-bold {
+
+    font-weight: 700 !important;
+
+}
+
+
+
+/* Dark Mode */
+
+body.dark-mode .offcanvas-custom {
+
+    background: #343a40;
+
+    color: #fff;
+
+}
+
+
+
+body.dark-mode .offcanvas-custom-header {
+
+    background: #495057;
+
+    border-bottom-color: #6c757d;
+
+}
+
+
+
+body.dark-mode .offcanvas-custom-body {
+
+    background: #343a40;
+
+}
+
+
+
+body.dark-mode .offcanvas-custom-body .card {
+
+    background: #495057;
+
+    border-color: #6c757d;
+
+}
+
+
+
+body.dark-mode .offcanvas-custom-body .card-header {
+
+    background: #6c757d;
+
+    border-bottom-color: #5a6268;
+
+}
+
+
+
+body.dark-mode .offcanvas-custom-body .form-control {
+
+    background: #495057;
+
+    border-color: #6c757d;
+
+    color: #fff;
+
+}
+
+
+
+body.dark-mode .offcanvas-custom-body .form-control:focus {
+
+    border-color: #007bff;
+
+}
+
+
+
+body.dark-mode .offcanvas-custom-body .form-control[readonly] {
+
+    background: #6c757d;
+
+}

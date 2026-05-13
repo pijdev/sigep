@@ -1,0 +1,130 @@
+/* Dashboard Minimalista SIGEP */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%) !important;
+}
+
+.hover-lift {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+.hover-lift:hover .card-body {
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.card {
+    border-radius: 12px !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.border-right {
+    border-right: 1px solid #e5e7eb;
+}
+
+.text-primary {
+    color: #3b82f6 !important;
+}
+
+.text-info {
+    color: #0ea5e9 !important;
+}
+
+.text-success {
+    color: #10b981 !important;
+}
+
+.text-warning {
+    color: #f59e0b !important;
+}
+
+.font-weight-light {
+    font-weight: 300 !important;
+}
+
+.font-weight-normal {
+    font-weight: 400 !important;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.opacity-75 {
+    opacity: 0.75;
+}
+
+/* Espaçamento vertical */
+.space-y-3 > * + * {
+    margin-top: 0.75rem;
+}
+
+/* Alinhamento melhorado */
+.d-flex.align-items-center {
+    align-items: center;
+}
+
+.text-dark {
+    color: #212529 !important;
+}
+
+/* Cards com altura igual */
+.h-100 {
+    height: 100%;
+}
+
+/* Animação suave para cards */
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-3px);
+    }
+
+    .col-md-8, .col-md-4 {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Melhorias de alinhamento */
+.pr-3 {
+    padding-right: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.d-block {
+    display: block;
+}

@@ -1,0 +1,234 @@
+/* Controle de Caminhões Pipa - SIGEP */
+/* Baseado no estilo da página de escoltas */
+
+.caminhoes-pipa-page .small-box {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.caminhoes-pipa-page .small-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.caminhoes-pipa-page .card {
+  border-radius: 10px;
+}
+
+.caminhoes-pipa-page .bg-primary { background: linear-gradient(135deg, #007bff, #0056b3) !important; }
+.caminhoes-pipa-page .bg-info { background: linear-gradient(135deg, #17a2b8, #138496) !important; }
+.caminhoes-pipa-page .bg-success { background: linear-gradient(135deg, #28a745, #1e7e34) !important; }
+.caminhoes-pipa-page .bg-danger { background: linear-gradient(135deg, #dc3545, #c82333) !important; }
+.caminhoes-pipa-page .bg-warning { background: linear-gradient(135deg, #ffc107, #e0a800) !important; }
+.caminhoes-pipa-page .bg-secondary { background: linear-gradient(135deg, #6c757d, #545b62) !important; }
+
+.table-caminhoes-pipa thead th {
+  border-top: none;
+  background: #f4f6f9;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .table-caminhoes-pipa thead th {
+  background: #343a40;
+  color: #fff;
+}
+
+.table-caminhoes-pipa td {
+  vertical-align: middle;
+}
+
+/* Offcanvas para formulários */
+.offcanvas-caminhoes-pipa {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  transition: right 0.3s ease-in-out;
+  z-index: 1050;
+}
+
+.offcanvas-caminhoes-pipa.show {
+  right: 0;
+}
+
+.offcanvas-caminhoes-pipa-header {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: between;
+  align-items: center;
+}
+
+.offcanvas-title {
+  font-weight: 600;
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+.offcanvas-caminhoes-pipa-body {
+  padding: 1.5rem;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+}
+
+/* Animações */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.table-caminhoes-pipa tbody tr {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .caminhoes-pipa-page .small-box h3 {
+    font-size: 1.5rem;
+  }
+  
+  .caminhoes-pipa-page .small-box p {
+    font-size: 0.75rem;
+  }
+  
+  .offcanvas-caminhoes-pipa {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .offcanvas-caminhoes-pipa.show {
+    right: 0;
+  }
+  
+  .table-caminhoes-pipa {
+    font-size: 0.875rem;
+  }
+  
+  .table-caminhoes-pipa thead th {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .table-caminhoes-pipa tbody td {
+    padding: 0.5rem;
+  }
+}
+
+/* Dark Mode */
+body.dark-mode .caminhoes-pipa-page {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+}
+
+body.dark-mode .caminhoes-pipa-page .card {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+body.dark-mode .caminhoes-pipa-page .card-header {
+  background: linear-gradient(135deg, #2d3748 0%, #1a1a1a 100%);
+  border-color: #4a5568;
+}
+
+body.dark-mode .caminhoes-pipa-page .card-title {
+  color: #e9ecef;
+}
+
+body.dark-mode .table-caminhoes-pipa {
+  background: #2d3748;
+  color: #e9ecef;
+}
+
+body.dark-mode .table-caminhoes-pipa thead th {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+}
+
+body.dark-mode .table-caminhoes-pipa tbody td {
+  border-color: #4a5568;
+}
+
+body.dark-mode .table-caminhoes-pipa tbody tr:hover {
+  background-color: #343a40;
+}
+
+body.dark-mode .offcanvas-caminhoes-pipa {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+body.dark-mode .caminhoes-pipa-page .small-box p {
+  color: #adb5bd;
+}
+
+/* Estados específicos */
+.status-ativo {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.status-inativo {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.status-manutencao {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+/* Badges para status */
+.badge-ativo {
+  background-color: #28a745;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+}
+
+.badge-inativo {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+}
+
+.badge-manutencao {
+  background-color: #ffc107;
+  color: #212529;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+}

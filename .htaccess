@@ -115,6 +115,9 @@ RewriteRule ^seguranca/gestao-contas/?$ modulos/seguranca/gestao_contas/gestao_c
 # Medidas Disciplinares
 RewriteRule ^medidas-disciplinares/?$ modulos/coordenacao/medidas_disciplinares/md_view.php [L,QSA]
 
+# Solicitações de Internos
+RewriteRule ^coordenacao/solicitacoes/?$ modulos/coordenacao/solicitacoes/index.php [L,QSA]
+
 # ======================================================================
 # MÓDULO GERAL - URLs Amigáveis
 # ======================================================================

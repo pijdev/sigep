@@ -27,11 +27,6 @@ include_once __DIR__ . '/../../includes/sidebar.php';
         </div>
     </div>
     <!-- Elementos usados pelo SPA (loadPage) - mantidos invisíveis no Início -->
-    <div class="d-none">
-        <span id="content-main-title-hidden">Início</span>
-        <span id="breadcrumb-parent-hidden">SIGEP</span>
-        <span id="breadcrumb-title-hidden">Bem-vindo</span>
-    </div>
     <section class="content px-4">
         <div class="container-fluid" id="main-content">
             <div class="row mb-4">

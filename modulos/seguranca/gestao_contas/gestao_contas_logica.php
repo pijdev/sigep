@@ -78,10 +78,10 @@ function adminGenerateKioskToken(PDO $pdo, int $targetId, bool $force): array
     $plain = bin2hex(random_bytes(32));
     $hash = password_hash($plain, PASSWORD_DEFAULT);
 
-    $up = $pdo->prepare("UPDATE acesso_seguro SET kiosk_token = ?, kiosk_token_updated_at = NOW() WHERE id = ?");
+    $up = $pdo->prepare("UPDATE users SET kiosk_token = ?, kiosk_token_updated_at = NOW() WHERE id = ?");
     $up->execute([$hash, $targetId]);
 
-    $whenStmt = $pdo->prepare("SELECT DATE_FORMAT(kiosk_token_updated_at, '%d/%m/%Y %H:%i') as atualizado_em FROM acesso_seguro WHERE id = ?");
+    $whenStmt = $pdo->prepare("SELECT DATE_FORMAT(kiosk_token_updated_at, '%d/%m/%Y %H:%i') as atualizado_em FROM users WHERE id = ?");
     $whenStmt->execute([$targetId]);
     $atualizado = $whenStmt->fetchColumn() ?: '';
 

@@ -1,8 +1,13 @@
 {
     "require": {
-        "phpoffice/phpspreadsheet": "^5.4",
         "illuminate/database": "^12.53",
         "illuminate/events": "^12.53",
-        "phpoffice/phpword": "^1.4"
+        "almasaeed2010/adminlte": "4.0.0-rc7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Config\\": "config/",
+            "Modules\\": "modules/"
+        }
     }
 }

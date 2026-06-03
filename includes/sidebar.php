@@ -47,6 +47,14 @@ $userInfo = getUserInfo();
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-flat"
                 data-widget="treeview" role="menu">
 
+
+                <li class="nav-item has-treeview mt-1">
+                    <a href="#" class="nav-link">
+                        <i class="bi bi-people-fill"></i>
+                        <p>SETORES</p>
+                    </a>
+                </li>
+
                 <!-- ======================================================
                      REGION: CENSURA
                 ====================================================== -->
@@ -69,6 +77,7 @@ $userInfo = getUserInfo();
                         </ul>
                     </li>
                 <?php endif; ?>
+
 
                 <!-- ======================================================
                      REGION: ROUPARIA (ATUAL)

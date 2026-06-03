@@ -1,0 +1,568 @@
+/**
+ * Estilos para Kanban estilo Microsoft Planner
+ * Sistema de Solicitações - SIGEP
+ */
+
+/* ============================================
+   LAYOUT PRINCIPAL DO KANBAN
+   ============================================ */
+
+.kanban-board {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    padding: 0.5rem 0.5rem 1.5rem;
+    min-height: calc(100vh - 300px);
+    background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 0.75rem;
+}
+
+/* ============================================
+   COLUNAS DO KANBAN
+   ============================================ */
+
+.kanban-column {
+    min-width: 320px;
+    max-width: 360px;
+    flex: 1 1 320px;
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.kanban-column:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.kanban-column-highlight {
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25), 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ============================================
+   CABEÇALHO DAS COLUNAS
+   ============================================ */
+
+.kanban-column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+    background: #fafbfc;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.kanban-column-indicator {
+    width: 4px;
+    height: 24px;
+    border-radius: 2px;
+    margin-right: 0.75rem;
+}
+
+.kanban-column-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.kanban-column-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.kanban-column-actions .badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 1rem;
+    font-weight: 600;
+}
+
+.btn-add-card {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.8rem !important;
+    transition: all 0.2s ease;
+}
+
+.btn-add-card:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   CONTAINER DE CARDS
+   ============================================ */
+
+.kanban-column-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1rem;
+    min-height: 200px;
+    flex: 1;
+    background: #f8f9fa;
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* ============================================
+   CARDS DO KANBAN
+   ============================================ */
+
+.kanban-card {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 0.85rem;
+    padding: 1rem;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.kanban-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    border-color: rgba(13, 110, 253, 0.2);
+}
+
+.kanban-card-dragging {
+    opacity: 0.5;
+    transform: rotate(3deg) scale(0.95);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.kanban-card-placeholder {
+    background: rgba(13, 110, 253, 0.08);
+    border: 2px dashed rgba(13, 110, 253, 0.3);
+    border-radius: 0.85rem;
+    min-height: 120px;
+}
+
+/* ============================================
+   HEADER DO CARD
+   ============================================ */
+
+.kanban-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.kanban-card-priority .badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.55rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.kanban-card-id {
+    font-size: 0.75rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* ============================================
+   CATEGORIA DO CARD
+   ============================================ */
+
+.kanban-card-category {
+    margin-bottom: 0.6rem;
+}
+
+.kanban-category-tag {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* ============================================
+   CORPO DO CARD
+   ============================================ */
+
+.kanban-card-body {
+    margin-bottom: 0.75rem;
+}
+
+.kanban-card-interno {
+    font-size: 0.85rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.kanban-card-descricao {
+    font-size: 0.85rem;
+    color: #495057;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* ============================================
+   DEADLINE DO CARD
+   ============================================ */
+
+.kanban-card-deadline {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.3rem 0.5rem;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+.kanban-card-deadline.text-danger {
+    background: #fee;
+    color: #dc3545 !important;
+    font-weight: 600;
+}
+
+/* ============================================
+   FOOTER DO CARD
+   ============================================ */
+
+.kanban-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.6rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.kanban-card-responsavel {
+    display: flex;
+    align-items: center;
+}
+
+.kanban-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-avatar-placeholder {
+    background: #e9ecef;
+    color: #6c757d;
+}
+
+.kanban-card-tarefas {
+    font-size: 0.8rem;
+}
+
+/* ============================================
+   SUGESTÕES DE BUSCA DE INTERNO
+   ============================================ */
+
+#sugestoesInterno,
+#sugestoesRapido {
+    position: absolute;
+    width: 100%;
+    max-height: 280px;
+    overflow-y: auto;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: none;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1100;
+    margin-top: -4px;
+}
+
+#sugestoesInterno button,
+#sugestoesRapido button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    text-align: left;
+    color: #343a40;
+    transition: background 0.15s ease;
+}
+
+#sugestoesInterno button:hover,
+#sugestoesRapido button:hover {
+    background: #f8f9fa;
+    color: #007bff;
+}
+
+#sugestoesInterno button small,
+#sugestoesRapido button small {
+    display: block;
+    color: #6c757d;
+    margin-top: 0.2rem;
+}
+
+/* ============================================
+   TAREFAS
+   ============================================ */
+
+.tarefa-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    background: #f8f9fa;
+    border-radius: 0.6rem;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+}
+
+.tarefa-item:hover {
+    background: #e9ecef;
+}
+
+.tarefa-item.completed {
+    background: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.tarefa-item.completed input[type="text"] {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+.tarefa-item input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.tarefa-item input[type="text"] {
+    border: none;
+    background: transparent;
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.tarefa-item button {
+    border: none;
+    background: transparent;
+    color: #dc3545;
+    padding: 0.25rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.tarefa-item button:hover {
+    color: #a71d2a;
+}
+
+/* ============================================
+   HISTÓRICO
+   ============================================ */
+
+.historico-item {
+    border-bottom: 1px solid #e9ecef;
+    padding: 0.75rem 0;
+    transition: background 0.2s ease;
+}
+
+.historico-item:hover {
+    background: #f8f9fa;
+}
+
+.historico-item:last-child {
+    border-bottom: none;
+}
+
+.historico-item .badge {
+    font-size: 0.75rem;
+}
+
+.historico-item small {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+.historico-item p {
+    margin: 0.4rem 0 0 0;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+/* ============================================
+   LOADING
+   ============================================ */
+
+.kanban-loading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.kanban-loading i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .kanban-column {
+        min-width: 300px;
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 992px) {
+    .kanban-board {
+        flex-wrap: nowrap;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .kanban-column {
+        min-width: 280px;
+        max-width: 300px;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .kanban-board {
+        padding: 0.25rem 0.25rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .kanban-column {
+        min-width: 260px;
+        max-width: 280px;
+    }
+
+    .kanban-card {
+        padding: 0.85rem;
+    }
+
+    .kanban-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .kanban-card-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOMIZADA
+   ============================================ */
+
+.kanban-board::-webkit-scrollbar,
+#sugestoesInterno::-webkit-scrollbar,
+#sugestoesRapido::-webkit-scrollbar,
+#respostaHistorico::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.kanban-board::-webkit-scrollbar-track,
+#sugestoesInterno::-webkit-scrollbar-track,
+#sugestoesRapido::-webkit-scrollbar-track,
+#respostaHistorico::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.kanban-board::-webkit-scrollbar-thumb,
+#sugestoesInterno::-webkit-scrollbar-thumb,
+#sugestoesRapido::-webkit-scrollbar-thumb,
+#respostaHistorico::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.kanban-board::-webkit-scrollbar-thumb:hover,
+#sugestoesInterno::-webkit-scrollbar-thumb:hover,
+#sugestoesRapido::-webkit-scrollbar-thumb:hover,
+#respostaHistorico::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kanban-card {
+    animation: slideIn 0.3s ease;
+}
+
+/* ============================================
+   ESTILOS ADICIONAIS PARA MODAL
+   ============================================ */
+
+.modal-xl .modal-content {
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+.modal-xl .modal-body {
+    max-height: calc(90vh - 150px);
+    overflow-y: auto;
+}
+
+#infoInternoSelecionado {
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+}
+
+/* ============================================
+   FILTROS
+   ============================================ */
+
+#painelFiltros {
+    transition: all 0.3s ease;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.font-weight-bold {
+    font-weight: 600;
+}

@@ -1,0 +1,18 @@
+/* Indentação elegante para os submenus do AdminLTE 4 */
+.nav-sidebar .nav-treeview {
+    padding-left: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+/* Transição de opacidade suave para a troca de páginas do SPA */
+#main-content-wrapper {
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Correção de alinhamento para ícones do Bootstrap Icons nos menus */
+.nav-sidebar .nav-icon {
+    font-size: 1.1rem;
+    width: 1.6rem;
+    text-align: center;
+    display: inline-block;
+}

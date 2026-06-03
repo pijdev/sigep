@@ -99,10 +99,6 @@ if (isset($_REQUEST['acao'])) {
         ob_clean();
         header('Content-Type: application/json');
         try {
-            // Restrição: Portaria não pode editar
-            if ($eh_portaria) {
-                throw new Exception("Usuário da portaria não tem permissão para editar registros.");
-            }
 
             $id = $_POST['id'];
 

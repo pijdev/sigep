@@ -136,7 +136,8 @@ function getMenuConfig()
             'icon' => 'fas fa-sitemap text-primary',
             'items' => [
                 ['title' => 'Painel Regalias', 'icon' => 'fas fa-users-cog text-success', 'page' => '/modulos/coordenacao/regalias/regalias_view.php', 'parent' => 'Painel Regalias'],
-                ['title' => 'Medidas Disciplinares', 'icon' => 'fas fa-gavel text-danger', 'page' => '/medidas-disciplinares', 'parent' => 'Medidas Disciplinares']
+                ['title' => 'Medidas Disciplinares', 'icon' => 'fas fa-gavel text-danger', 'page' => '/medidas-disciplinares', 'parent' => 'Medidas Disciplinares'],
+                ['title' => 'Solicitações de Internos', 'icon' => 'fas fa-users-cog text-success', 'page' => '/modulos/coordenacao/solicitacoes/index.php', 'parent' => 'Solicitações de Internos']
             ]
         ];
     }
@@ -154,7 +155,6 @@ function getMenuConfig()
         ];
     }
 
-    // Menu Ferramentas (sempre visível para administradores)
     if (isset($_SESSION['user_admin']) && $_SESSION['user_admin'] === true) {
         $menu['ferramentas'] = [
             'title' => 'Ferramentas',
@@ -169,7 +169,6 @@ function getMenuConfig()
         ];
     }
 
-    // Outros setores
     $setores = [
         'perm_rh' => ['Recursos Humanos', 'fa-users', 'text-info'],
         'perm_direcao' => ['Direção', 'fa-user-tie', 'text-danger'],
@@ -196,16 +195,15 @@ function getMenuConfig()
     return $menu;
 }
 
-// Verificar se deve mostrar o painel de internos
 function mostrarPainelInternos()
 {
     return ($_SESSION['user_admin'] or
         $_SESSION['perm_censura'] or
         $_SESSION['perm_seg_trab'] or
-        $_SESSION['perm_laboral']);
+        $_SESSION['perm_laboral']) or
+        $_SESSION['perm_coord'];
 }
 
-// Obter informações do usuário para exibição
 function getUserInfo()
 {
     return [

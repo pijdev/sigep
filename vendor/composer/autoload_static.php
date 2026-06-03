@@ -26,10 +26,6 @@ class ComposerStaticInit62e10e6c8df9afc192311b196c75bb33
         array (
             'voku\\' => 5,
         ),
-        'Z' =>
-        array (
-            'ZipStream\\' => 10,
-        ),
         'S' =>
         array (
             'Symfony\\Polyfill\\Php85\\' => 23,
@@ -45,13 +41,10 @@ class ComposerStaticInit62e10e6c8df9afc192311b196c75bb33
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Container\\' => 14,
             'Psr\\Clock\\' => 10,
-            'PhpOffice\\PhpWord\\' => 18,
-            'PhpOffice\\PhpSpreadsheet\\' => 25,
-            'PhpOffice\\Math\\' => 15,
         ),
         'M' =>
         array (
-            'Matrix\\' => 7,
+            'Modules\\' => 8,
         ),
         'L' =>
         array (
@@ -73,8 +66,7 @@ class ComposerStaticInit62e10e6c8df9afc192311b196c75bb33
         ),
         'C' =>
         array (
-            'Composer\\Pcre\\' => 14,
-            'Complex\\' => 8,
+            'Config\\' => 7,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
         ),
@@ -88,10 +80,6 @@ class ComposerStaticInit62e10e6c8df9afc192311b196c75bb33
         'voku\\' =>
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
-        ),
-        'ZipStream\\' =>
-        array (
-            0 => __DIR__ . '/..' . '/maennchen/zipstream-php/src',
         ),
         'Symfony\\Polyfill\\Php85\\' =>
         array (
@@ -133,21 +121,9 @@ class ComposerStaticInit62e10e6c8df9afc192311b196c75bb33
         array (
             0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
-        'PhpOffice\\PhpWord\\' =>
+        'Modules\\' =>
         array (
-            0 => __DIR__ . '/..' . '/phpoffice/phpword/src/PhpWord',
-        ),
-        'PhpOffice\\PhpSpreadsheet\\' =>
-        array (
-            0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
-        ),
-        'PhpOffice\\Math\\' =>
-        array (
-            0 => __DIR__ . '/..' . '/phpoffice/math/src/Math',
-        ),
-        'Matrix\\' =>
-        array (
-            0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
+            0 => __DIR__ . '/../..' . '/modules',
         ),
         'Laravel\\SerializableClosure\\' =>
         array (
@@ -189,13 +165,9 @@ class ComposerStaticInit62e10e6c8df9afc192311b196c75bb33
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/src',
         ),
-        'Composer\\Pcre\\' =>
+        'Config\\' =>
         array (
-            0 => __DIR__ . '/..' . '/composer/pcre/src',
-        ),
-        'Complex\\' =>
-        array (
-            0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
+            0 => __DIR__ . '/../..' . '/config',
         ),
         'Carbon\\Doctrine\\' =>
         array (

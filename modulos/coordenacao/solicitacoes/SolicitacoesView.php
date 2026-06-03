@@ -1,80 +1,62 @@
 <?php
-// SolicitacoesView - Renderiza a interface HTML do Kanban
-// O Controller só é carregado pelo index.php para requisições de API
+// SolicitacoesView - Renderiza a interface do Kanban de Solicitações
 ?>
-
-<script>
-    window.pageTitle = 'Solicitações - Kanban';
-    window.currentPage = 'solicitacoes';
-</script>
-
-<link rel="stylesheet" href="modulos/coordenacao/solicitacoes/assets/css/solicitacoes.css">
+<link rel="stylesheet" href="/modulos/coordenacao/solicitacoes/assets/css/app.css?v=<?= time() ?>">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="/node_modules/sortablejs/Sortable.min.js"></script>
 
 <section class="content pt-3">
     <div class="container-fluid">
-        <!-- Cabeçalho do Kanban -->
-        <div class="row mb-3">
-            <div class="col-md-8">
-                <h1 class="m-0 text-primary"><i class="fas fa-columns mr-2"></i>Painel de Solicitações</h1>
-                <p class="text-muted text-sm mb-0">Arraste e solte os cards para gerenciar o status das solicitações</p>
+
+        <!-- Cabeçalho -->
+        <div class="row mb-3 align-items-center">
+            <div class="col-md-7">
+                <h4>Painel</h4>
             </div>
-            <div class="col-md-4 text-md-right mt-2 mt-md-0">
-                <div class="btn-group w-100">
-                    <button id="btnCriarCard" class="btn btn-primary">
-                        <i class="fas fa-plus mr-1"></i> Nova Solicitação
-                    </button>
-                    <button id="btnFiltrarKanban" class="btn btn-default">
-                        <i class="fas fa-filter mr-1"></i> Filtrar
-                    </button>
-                    <button id="btnRecarregarKanban" class="btn btn-default">
-                        <i class="fas fa-sync-alt"></i>
-                    </button>
-                </div>
+            <div class="col-md-5 text-md-right mt-2 mt-md-0">
+                <button id="btnCriarCard" class="btn btn-primary btn-sm mr-1">
+                    <i class="fas fa-plus mr-1"></i>Nova Solicitação
+                </button>
+                <button id="btnFiltrar" class="btn btn-default btn-sm mr-1">
+                    <i class="fas fa-filter mr-1"></i>Filtros
+                </button>
+                <button id="btnRecarregar" class="btn btn-default btn-sm">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
             </div>
         </div>
 
-        <!-- Área de mensagens -->
-        <div id="kanbanMensagens"></div>
-
-        <!-- Painel de Filtros (colapsável) -->
+        <!-- Painel de Filtros -->
         <div id="painelFiltros" class="card card-outline card-secondary mb-3 d-none">
-            <div class="card-body">
-                <div class="row align-items-end">
-                    <div class="col-md-3 mb-2">
-                        <label for="filtroTermo" class="text-sm">Buscar por interno ou descrição</label>
-                        <input id="filtroTermo" type="text" class="form-control form-control-sm" placeholder="IPEN, nome, descrição...">
+            <div class="card-body py-2">
+                <div class="row align-items-end g-2">
+                    <div class="col-md-3">
+                        <label class="text-sm mb-1">Buscar</label>
+                        <input id="filtroTermo" type="text" class="form-control form-control-sm"
+                               placeholder="IPEN, nome, descrição...">
                     </div>
-                    <div class="col-md-3 mb-2">
-                        <label for="filtroSetor" class="text-sm">Setor</label>
+                    <div class="col-md-3">
+                        <label class="text-sm mb-1">Setor</label>
                         <select id="filtroSetor" class="form-control form-control-sm">
-                            <option value="">Todos os setores</option>
+                            <option value="">Todos</option>
                         </select>
                     </div>
-                    <div class="col-md-2 mb-2">
-                        <label for="filtroCategoria" class="text-sm">Categoria</label>
+                    <div class="col-md-3">
+                        <label class="text-sm mb-1">Categoria</label>
                         <select id="filtroCategoria" class="form-control form-control-sm">
-                            <option value="">Todas categorias</option>
-                            <option value="Saúde">Saúde</option>
-                            <option value="Jurídico">Jurídico</option>
-                            <option value="Social">Social</option>
-                            <option value="Educação">Educação</option>
-                            <option value="Trabalho">Trabalho</option>
-                            <option value="Outros">Outros</option>
+                            <option value="">Todas</option>
                         </select>
                     </div>
-                    <div class="col-md-2 mb-2">
-                        <label for="filtroPrioridade" class="text-sm">Prioridade</label>
-                        <select id="filtroPrioridade" class="form-control form-control-sm">
-                            <option value="">Todas prioridades</option>
-                            <option value="Urgente">Urgente</option>
-                            <option value="Alta">Alta</option>
-                            <option value="Média">Média</option>
-                            <option value="Baixa">Baixa</option>
-                        </select>
+                    <div class="col-md-2">
+                        <div class="custom-control custom-checkbox mt-4">
+                            <input type="checkbox" class="custom-control-input" id="filtroVerCanceladas">
+                            <label class="custom-control-label text-sm" for="filtroVerCanceladas">Ver Canceladas</label>
+                        </div>
                     </div>
-                    <div class="col-md-2 mb-2">
-                        <button id="btnAplicarFiltros" class="btn btn-primary btn-block">
-                            <i class="fas fa-search mr-1"></i> Aplicar
+                    <div class="col-md-1">
+                        <button id="btnAplicarFiltros" class="btn btn-primary btn-sm btn-block mt-1">
+                            <i class="fas fa-search"></i>
                         </button>
                     </div>
                 </div>
@@ -82,32 +64,29 @@
         </div>
 
         <!-- Kanban Board -->
-        <div id="kanbanBoard" class="kanban-board">
-            <div class="kanban-loading text-center py-5">
+        <div id="kanbanBoard">
+            <div class="text-center py-5 w-100">
                 <i class="fas fa-spinner fa-spin fa-2x text-primary"></i>
-                <p class="text-muted mt-2">Carregando solicitações...</p>
+                <p class="text-muted mt-2">Carregando...</p>
             </div>
         </div>
+
     </div>
 </section>
 
-<!-- Modal de Criação/Edição de Card -->
-<div class="modal fade" id="modalCard" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+<!-- Modal Solicitação -->
+<div class="modal fade" id="modalCard" tabindex="-1" role="dialog" aria-labelledby="modalCardTitulo">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="modalCardTitle">
-                    <i class="fas fa-plus-circle mr-2"></i>Nova Solicitação
-                </h5>
-                <button type="button" class="close text-white" data-dismiss="modal">
-                    <span>&times;</span>
-                </button>
+                <h5 class="modal-title" id="modalCardTitulo">Nova Solicitação</h5>
+                <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
             </div>
             <form id="formCard">
                 <input type="hidden" id="cardId" name="id">
                 <div class="modal-body">
-                    <!-- Abas do Modal -->
-                    <ul class="nav nav-tabs mb-3" id="cardTabs" role="tablist">
+
+                    <ul class="nav nav-tabs mb-3" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" href="#tabPrincipal">
                                 <i class="fas fa-info-circle mr-1"></i>Principal
@@ -126,119 +105,91 @@
                     </ul>
 
                     <div class="tab-content">
+
                         <!-- Aba Principal -->
                         <div class="tab-pane fade show active" id="tabPrincipal">
                             <div class="row">
-                                <!-- Seleção de Interno -->
-                                <div class="col-lg-12 mb-3">
-                                    <label for="buscaInterno" class="text-sm font-weight-bold">
-                                        <i class="fas fa-user mr-1"></i>Buscar Interno
+                                <div class="col-12 mb-3">
+                                    <label class="text-sm font-weight-bold">
+                                        <i class="fas fa-user mr-1"></i>Interno
                                     </label>
-                                    <div class="input-group">
-                                        <input id="buscaInterno" type="text" class="form-control" 
-                                               placeholder="Digite IPEN, nome ou nome social..." autocomplete="off">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-search"></i></span>
-                                        </div>
+                                    <div class="position-relative">
+                                        <input id="buscaInterno" type="text" class="form-control"
+                                               placeholder="Digite iPEN, Nome ou Nome Social..." autocomplete="off">
+                                        <div id="sugestoesInterno" class="sugestoes-lista"></div>
                                     </div>
-                                    <div id="sugestoesInterno" class="bg-white shadow-sm mt-1" style="display:none;"></div>
                                     <input type="hidden" id="internoId" name="id_interno">
-                                    <div id="infoInternoSelecionado" class="alert alert-info mt-2 d-none">
-                                        <small><i class="fas fa-user-check mr-1"></i>
-                                        <span id="textoInfoInterno">Nenhum interno selecionado</span></small>
-                                    </div>
+                                    <small id="infoInterno" class="text-info d-none"></small>
                                 </div>
 
-                                <!-- Setor e Status -->
                                 <div class="col-md-6 mb-3">
-                                    <label for="cardSetor" class="text-sm font-weight-bold">
+                                    <label class="text-sm font-weight-bold">
                                         <i class="fas fa-building mr-1"></i>Setor Destino
                                     </label>
                                     <select id="cardSetor" name="setor_destino" class="form-control" required>
                                         <option value="">Selecione...</option>
                                     </select>
                                 </div>
+
                                 <div class="col-md-6 mb-3">
-                                    <label for="cardStatus" class="text-sm font-weight-bold">
+                                    <label class="text-sm font-weight-bold">
                                         <i class="fas fa-flag mr-1"></i>Status
                                     </label>
                                     <select id="cardStatus" name="status" class="form-control">
-                                        <option value="Pendentes">Pendentes</option>
+                                        <option value="Pendentes">Pendente</option>
                                         <option value="Em Atendimento">Em Atendimento</option>
                                         <option value="Aguardando">Aguardando</option>
-                                        <option value="Atendidas">Atendidas</option>
-                                        <option value="Canceladas">Canceladas</option>
+                                        <option value="Atendidas">Concluído</option>
+                                        <option value="Canceladas">Cancelado</option>
                                     </select>
                                 </div>
 
-                                <!-- Categoria e Prioridade -->
                                 <div class="col-md-6 mb-3">
-                                    <label for="cardCategoria" class="text-sm font-weight-bold">
+                                    <label class="text-sm font-weight-bold">
                                         <i class="fas fa-tag mr-1"></i>Categoria
                                     </label>
-                                    <select id="cardCategoria" name="categoria" class="form-control">
-                                        <option value="">Selecione...</option>
-                                        <option value="Saúde">Saúde</option>
-                                        <option value="Jurídico">Jurídico</option>
-                                        <option value="Social">Social</option>
-                                        <option value="Educação">Educação</option>
-                                        <option value="Trabalho">Trabalho</option>
-                                        <option value="Outros">Outros</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="cardPrioridade" class="text-sm font-weight-bold">
-                                        <i class="fas fa-exclamation-triangle mr-1"></i>Prioridade
-                                    </label>
-                                    <select id="cardPrioridade" name="prioridade" class="form-control">
-                                        <option value="Baixa">Baixa</option>
-                                        <option value="Média" selected>Média</option>
-                                        <option value="Alta">Alta</option>
-                                        <option value="Urgente">Urgente</option>
-                                    </select>
+                                    <div class="input-group">
+                                        <select id="cardCategoria" name="categoria" class="form-control">
+                                            <option value="">Sem categoria</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button type="button" id="btnGerenciarCategorias"
+                                                    class="btn btn-outline-secondary btn-sm" title="Gerenciar categorias">
+                                                <i class="fas fa-cog"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <!-- Data Limite -->
                                 <div class="col-md-6 mb-3">
-                                    <label for="cardDataLimite" class="text-sm font-weight-bold">
-                                        <i class="fas fa-calendar-alt mr-1"></i>Data Limite
-                                    </label>
-                                    <input id="cardDataLimite" type="date" name="data_limite" class="form-control">
-                                </div>
-
-                                <!-- Responsável -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="cardResponsavel" class="text-sm font-weight-bold">
+                                    <label class="text-sm font-weight-bold">
                                         <i class="fas fa-user-tie mr-1"></i>Responsável
                                     </label>
-                                    <input id="cardResponsavel" type="text" name="responsavel_nome" class="form-control" 
-                                           placeholder="Nome do responsável">
+                                    <input id="cardResponsavel" type="text" name="responsavel_nome"
+                                           class="form-control" placeholder="Nome do responsável">
                                 </div>
 
-                                <!-- Descrição -->
-                                <div class="col-lg-12 mb-3">
-                                    <label for="cardDescricao" class="text-sm font-weight-bold">
-                                        <i class="fas fa-align-left mr-1"></i>Descrição da Solicitação
+                                <div class="col-12 mb-3">
+                                    <label class="text-sm font-weight-bold">
+                                        <i class="fas fa-align-left mr-1"></i>Descrição
                                     </label>
-                                    <textarea id="cardDescricao" name="descricao" class="form-control" rows="4" 
-                                              placeholder="Descreva detalhadamente a solicitação..." required></textarea>
+                                    <textarea id="cardDescricao" name="descricao" class="form-control"
+                                              rows="4" placeholder="Descreva a solicitação..." required></textarea>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Aba Tarefas -->
                         <div class="tab-pane fade" id="tabTarefas">
-                            <div class="mb-3">
-                                <h6 class="font-weight-bold mb-2">Tarefas do Card</h6>
-                                <p class="text-muted text-sm mb-3">Adicione tarefas para acompanhar atividades internas da solicitação.</p>
-                                <div id="listaTarefas" class="mb-3"></div>
-                                <div class="input-group">
-                                    <input id="novaTarefa" type="text" class="form-control" placeholder="Nova tarefa...">
-                                    <div class="input-group-append">
-                                        <button type="button" id="btnAdicionarTarefa" class="btn btn-outline-primary">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
-                                    </div>
+                            <div id="listaTarefas" class="mb-3"></div>
+                            <div class="input-group">
+                                <input id="novaTarefa" type="text" class="form-control form-control-sm"
+                                       placeholder="Nova tarefa...">
+                                <div class="input-group-append">
+                                    <button type="button" id="btnAdicionarTarefa"
+                                            class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -246,26 +197,26 @@
                         <!-- Aba Histórico -->
                         <div class="tab-pane fade" id="tabHistorico">
                             <div id="listaHistorico" class="mb-3">
-                                <p class="text-muted text-sm">Selecione uma solicitação para ver o histórico.</p>
+                                <p class="text-muted text-sm">Nenhum histórico.</p>
                             </div>
                             <div class="border-top pt-3">
-                                <label class="text-sm font-weight-bold">Adicionar Comentário</label>
-                                <textarea id="novoComentario" class="form-control mb-2" rows="3" 
-                                          placeholder="Digite um comentário ou observação..."></textarea>
-                                <button type="button" id="btnAdicionarComentario" class="btn btn-sm btn-outline-primary">
-                                    <i class="fas fa-comment mr-1"></i>Adicionar Comentário
+                                <label class="text-sm font-weight-bold">Comentário</label>
+                                <textarea id="novoComentario" class="form-control form-control-sm mb-2"
+                                          rows="2" placeholder="Adicionar comentário..."></textarea>
+                                <button type="button" id="btnAdicionarComentario"
+                                        class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-comment mr-1"></i>Enviar
                                 </button>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        <i class="fas fa-times mr-1"></i>Cancelar
-                    </button>
                     <button type="button" id="btnDeletarCard" class="btn btn-danger d-none">
                         <i class="fas fa-trash mr-1"></i>Excluir
                     </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-save mr-1"></i>Salvar
                     </button>
@@ -275,52 +226,47 @@
     </div>
 </div>
 
-<!-- Modal de Criação Rápida (por coluna) -->
-<div class="modal fade" id="modalCriacaoRapida" tabindex="-1" role="dialog">
+<!-- Modal Criação Rápida -->
+<div class="modal fade" id="modalRapido" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-success text-white">
-                <h5 class="modal-title">
-                    <i class="fas fa-bolt mr-2"></i>Criação Rápida
-                </h5>
-                <button type="button" class="close text-white" data-dismiss="modal">
-                    <span>&times;</span>
-                </button>
+                <h5 class="modal-title"><i class="fas fa-bolt mr-2"></i>Criação Rápida</h5>
+                <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
             </div>
-            <form id="formCriacaoRapida">
+            <form id="formRapido">
                 <input type="hidden" id="rapidoStatus" name="status">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="rapidoInterno" class="font-weight-bold">Interno</label>
-                        <input id="rapidoInterno" type="text" class="form-control" 
-                               placeholder="Digite IPEN ou nome..." autocomplete="off">
-                        <div id="sugestoesRapido" class="bg-white shadow-sm mt-1" style="display:none;"></div>
+                        <label class="font-weight-bold">Interno</label>
+                        <div class="position-relative">
+                            <input id="rapidoInterno" type="text" class="form-control"
+                                   placeholder="Digite IPEN ou nome..." autocomplete="off">
+                            <div id="sugestoesRapido" class="sugestoes-lista"></div>
+                        </div>
                         <input type="hidden" id="rapidoInternoId">
                         <input type="hidden" id="rapidoInternoNome">
                         <input type="hidden" id="rapidoInternoIPEN">
                     </div>
                     <div class="form-group">
-                        <label for="rapidoDescricao" class="font-weight-bold">Descrição</label>
-                        <textarea id="rapidoDescricao" name="descricao" class="form-control" rows="3" 
-                                  placeholder="Descrição rápida da solicitação..." required></textarea>
+                        <label class="font-weight-bold">Descrição</label>
+                        <textarea id="rapidoDescricao" class="form-control" rows="3"
+                                  placeholder="Descrição da solicitação..." required></textarea>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="rapidoSetor">Setor</label>
-                                <select id="rapidoSetor" name="setor_destino" class="form-control" required>
+                                <label>Setor</label>
+                                <select id="rapidoSetor" class="form-control" required>
                                     <option value="">Selecione...</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="rapidoPrioridade">Prioridade</label>
-                                <select id="rapidoPrioridade" name="prioridade" class="form-control">
-                                    <option value="Média" selected>Média</option>
-                                    <option value="Alta">Alta</option>
-                                    <option value="Urgente">Urgente</option>
-                                    <option value="Baixa">Baixa</option>
+                                <label>Categoria</label>
+                                <select id="rapidoCategoria" class="form-control">
+                                    <option value="">Sem categoria</option>
                                 </select>
                             </div>
                         </div>
@@ -337,4 +283,44 @@
     </div>
 </div>
 
-<script src="modulos/coordenacao/solicitacoes/assets/js/solicitacoes.js"></script>
+<!-- Modal Gerenciar Categorias -->
+<div class="modal fade" id="modalCategorias" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-tags mr-2"></i>Categorias</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-sm mb-3">
+                    <tbody id="listaCategorias">
+                        <tr><td colspan="3" class="text-center text-muted">Carregando...</td></tr>
+                    </tbody>
+                </table>
+                <hr>
+                <form id="formCategoria">
+                    <input type="hidden" id="catId">
+                    <div class="input-group">
+                        <input type="text" id="catNome" class="form-control form-control-sm"
+                               placeholder="Nome da categoria..." maxlength="50" required>
+                        <input type="color" id="catCor" class="form-control form-control-color form-control-sm"
+                               value="#6c757d" style="max-width:50px">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fas fa-save"></i>
+                            </button>
+                            <button type="button" id="btnCancelarCat" class="btn btn-secondary btn-sm d-none">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/modulos/coordenacao/solicitacoes/assets/js/app.js?v=<?= time() ?>"></script>

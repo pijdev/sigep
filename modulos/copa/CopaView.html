@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGEP | Copa do Mundo 2026</title>
+  <link rel="stylesheet" href="/modulos/copa/app.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="fifa-title">
+        <span class="title">
+          <span>S</span>
+          <span class="soccer-wrapper">
+            <span class="letter-i">I</span>
+            <span class="soccer copa-2026"></span>
+          </span>
+          <span>G</span><span style="color: #3B82F6;">EP</span>
+        </span>
+        <span class="year">Tabela da Copa do Mundo FIFA 2026</span>
+        <small style="color: #ffffff;">Fornecido por <a href="https://www.gracenote.com/pt/" target="_blank"
+            style="color: inherit; text-decoration: underline;">Gracenote Sports Data</a> - Atualizado em Tempo
+          Real</small>
+      </div>
+      <div class="action-buttons">
+        <button onclick="printTable()" class="btn-print">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9V2h12v7"></path>
+            <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path>
+            <path d="M6 14h12v8H6z"></path>
+          </svg>
+          Imprimir Tabela
+        </button>
+        <button onclick="exportToExcel()" class="btn-excel">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9V2h12v7"></path>
+            <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path>
+            <path d="M6 14h12v8H6z"></path>
+          </svg>
+          Exportar (Excel)
+        </button>
+        <button onclick="window.location.href='/'" class="btn-sigep">
+          <div class="btn-text">
+            <span>Voltar ao SIG</span><span style="color: #3B82F6">EP</span>
+          </div>
+        </button>
+      </div>
+    </header>
+    <main id="groups-container"></main>
+  </div>
+  <script src="/modulos/copa/app.js"></script>
+</body>
+</html>

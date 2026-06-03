@@ -43,10 +43,11 @@ try {
   <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed <?= $dark_class ?>">
+<body class="hold-transition sidebar-colapsed layout-fixed fixed-header fixed-footer <?= $dark_class ?>">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     // Definir variável global com estado inicial do tema, priorizando localStorage para mudanças imediatas
@@ -60,7 +61,6 @@ try {
       echo getCSSAvisosManutencao();
       exibirAvisosManutencao();
     } catch (Exception $e) {
-      // Silenciar erros para não quebrar o header
     }
     ?>
     <nav class="main-header navbar navbar-expand <?= $nav_class ?>">
@@ -68,6 +68,8 @@ try {
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
+
+
       </ul>
       <ul class="navbar-nav ml-auto">
         <?php if (!empty($_SESSION['user_admin']) || !empty($_SESSION['perm_ti'])): ?>

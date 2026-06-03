@@ -1,0 +1,254 @@
+/* ============================================================
+   Kanban de Solicitações
+   ============================================================ */
+
+/* Board */
+#kanbanBoard {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    padding: 1rem;
+    min-height: calc(100vh - 320px);
+    border-radius: .75rem;
+    background: #f0f2f5;
+    scroll-behavior: smooth;
+}
+
+/* Coluna */
+.kanban-col {
+    min-width: 300px;
+    max-width: 340px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: .75rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    overflow: hidden;
+}
+
+.kanban-col-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1rem;
+    border-top: 4px solid var(--col-color, #6c757d);
+    background: #fafbfc;
+}
+
+.kanban-col-title {
+    font-size: .85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.kanban-col-actions {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.kanban-col-cards {
+    padding: .75rem;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    min-height: 200px;
+    flex: 1;
+    overflow-y: auto;
+    background: #f8f9fa;
+    transition: background .2s;
+}
+
+.kanban-col-cards.drag-over {
+    background: #e8f4ff;
+}
+
+/* Card */
+.kanban-card {
+    background: #fff;
+    border-radius: .6rem;
+    border: 1px solid rgba(0,0,0,.07);
+    padding: .85rem;
+    cursor: pointer;
+    transition: box-shadow .2s, transform .2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    animation: cardIn .25s ease;
+}
+
+.kanban-card:hover {
+    box-shadow: 0 6px 18px rgba(0,0,0,.13);
+    transform: translateY(-2px);
+}
+
+.kanban-card.sortable-ghost {
+    opacity: .3;
+    background: #f8f9fa;
+}
+
+.kanban-card.sortable-drag {
+    box-shadow: 0 12px 30px rgba(0,0,0,.2);
+    transform: rotate(1.5deg);
+}
+
+/* Card content */
+.card-cat-tag {
+    display: inline-block;
+    padding: .18rem .5rem;
+    border-radius: .35rem;
+    font-size: .68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: .3px;
+    margin-bottom: .4rem;
+}
+
+.card-interno {
+    font-size: .85rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: .3rem;
+}
+
+.card-descricao {
+    font-size: .82rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: .5rem;
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .75rem;
+    color: #888;
+    padding-top: .4rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.card-id {
+    font-size: .7rem;
+    color: #aaa;
+    margin-bottom: .3rem;
+    text-align: right;
+}
+
+/* Autocomplete sugestões */
+.sugestoes-lista {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 2000;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.12);
+    border-top: none;
+    border-radius: 0 0 .4rem .4rem;
+    max-height: 260px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.sugestoes-lista button {
+    display: block;
+    width: 100%;
+    padding: .6rem .9rem;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-size: .85rem;
+    color: #333;
+    transition: background .15s;
+}
+
+.sugestoes-lista button:hover {
+    background: #f0f6ff;
+    color: #007bff;
+}
+
+.sugestoes-lista button small {
+    display: block;
+    color: #999;
+    margin-top: .15rem;
+}
+
+/* Tarefas */
+.tarefa-item {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .45rem .65rem;
+    background: #f8f9fa;
+    border-radius: .4rem;
+    border: 1px solid #e9ecef;
+    margin-bottom: .4rem;
+}
+
+.tarefa-item.concluida input[type="text"] {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.tarefa-item input[type="text"] {
+    border: none;
+    background: transparent;
+    flex: 1;
+    font-size: .85rem;
+    outline: none;
+}
+
+/* Histórico */
+.historico-item {
+    padding: .6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: .85rem;
+}
+
+.historico-item:last-child { border-bottom: none; }
+
+/* Listas de categorias */
+#listaCategorias .cat-cor {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: .4rem;
+    vertical-align: middle;
+}
+
+/* Toast container */
+#toastContainer {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: .6rem;
+}
+
+/* Animação entrada card */
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #kanbanBoard {
+        padding: .5rem;
+        gap: .75rem;
+        scroll-snap-type: x mandatory;
+    }
+    .kanban-col {
+        min-width: 270px;
+        scroll-snap-align: start;
+    }
+}

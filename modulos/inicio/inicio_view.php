@@ -3,7 +3,7 @@
 // View do módulo início - HTML puro (MVC)
 
 require_once __DIR__ . '/inicio_logica.php';
-include_once __DIR__ . '/../../includes/header.php';
+//include_once __DIR__ . '/../../includes/header.php';
 include_once __DIR__ . '/../../includes/sidebar.php';
 ?>
 

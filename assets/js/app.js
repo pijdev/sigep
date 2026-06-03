@@ -45,3 +45,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function abrirAlertaCopa(url) {
+    Swal.fire({
+        title: '<span style="color: #009c3b;">Vai</span> <span style="color: #e2cc03;">Brasil</span><span style="color: #009c3b;">! ⚽</span>',
+        html: '<p><span style="color: #ffffff;">Tabela da Copa do Mundo FIFA 2026, fornecida pelo sistema </span><b><span style="color: #397CEB;">SIG</span><span style="color: #FFFFFF;">EP</span></b><span style="color: #ffffff;">.</span></p><p><span style="color: #ffffff;">Confira as partidas e os resultados em tempo real!</span></p>',
+        icon: 'warning',
+        iconColor: '#009c3b',
+        showConfirmButton: true,
+        timer: 5000,
+        timerProgressBar: true,
+        confirmButtonText: 'Bora! ⚽',
+        confirmButtonColor: '#009c3b',
+        showCancelButton: true,
+        cancelButtonText: 'Depois...',
+        cancelButtonColor: '#dc3545',
+        background: '#2c2c2c',
+        willOpen: () => {
+            const loader = Swal.getPopup().querySelector('.swal2-loader');
+            if (loader) {
+                loader.style.borderLeftColor = '#009c3b';
+                loader.style.borderRightColor = '#ffdf00';
+            }
+        },
+        customClass: {
+            popup: 'swal2-popup-copa'
+        }
+    }).then((result) => {
+        // Redireciona se o usuário clicar no botão de confirmação OU se o tempo do timer acabar
+        if (result.isConfirmed || result.dismiss === Swal.DismissReason.timer) {
+            window.location.href = url;
+        }
+    });
+}

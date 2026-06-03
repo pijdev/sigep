@@ -23,6 +23,12 @@ RewriteRule ^autenticacao/(.*)$ auth/login.php?msg=$1 [L,QSA]
 RewriteRule ^autenticacao/quiosque$ auth/kiosk_login.php [L,QSA]
 
 # ======================================================================
+# Copa do Mundo 2026
+# ======================================================================
+
+RewriteRule ^copa2026$ modulos/copa/CopaView.html [L,QSA]
+
+# ======================================================================
 # DASHBOARDS - URLs Amigáveis
 # ======================================================================
 

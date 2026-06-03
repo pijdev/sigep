@@ -44,7 +44,7 @@ class ComposerStaticInit62e10e6c8df9afc192311b196c75bb33
         ),
         'M' =>
         array (
-            'Modules\\' => 8,
+            'Modulos\\' => 8,
         ),
         'L' =>
         array (
@@ -121,9 +121,9 @@ class ComposerStaticInit62e10e6c8df9afc192311b196c75bb33
         array (
             0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
-        'Modules\\' =>
+        'Modulos\\' =>
         array (
-            0 => __DIR__ . '/../..' . '/modules',
+            0 => __DIR__ . '/../..' . '/modulos',
         ),
         'Laravel\\SerializableClosure\\' =>
         array (

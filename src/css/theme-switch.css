@@ -1,0 +1,43 @@
+.theme-switch {
+  display: block;
+  height: 20px;
+  width: 42px;
+  position: relative;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #dee2e6;
+  border: 1px solid #ced4da;
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  cursor: pointer;
+  transition: .3s ease;
+  border-radius: 20px;
+}
+
+.slider i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s ease;
+  color: #ff8b07;
+  font-size: 11px;
+}
+
+input:checked + .slider {
+  background-color: #1a252f;
+  border-color: #1a252f;
+}
+
+input:checked + .slider i {
+  transform: translateX(20px);
+  color: #5dade2;
+}

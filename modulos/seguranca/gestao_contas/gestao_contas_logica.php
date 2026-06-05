@@ -54,7 +54,7 @@ function gestao_contas_json_response(array $payload, int $code = 200): void
 
 function adminGenerateKioskToken(PDO $pdo, int $targetId, bool $force): array
 {
-    $stmt = $pdo->prepare("SELECT id, status, is_kiosk, kiosk_token FROM acesso_seguro WHERE id = ? LIMIT 1");
+    $stmt = $pdo->prepare("SELECT id, status, is_kiosk, kiosk_token FROM users WHERE id = ? LIMIT 1");
     $stmt->execute([$targetId]);
     $user = $stmt->fetch();
 
@@ -126,17 +126,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             if (!empty($_POST['user_id'])) {
                 $targetId = (int)$_POST['user_id'];
                 if ($pass_hash) {
-                    $sql = "UPDATE acesso_seguro SET $fields, senha = ? WHERE id = ?";
+                    $sql = "UPDATE users SET $fields, senha = ? WHERE id = ?";
                     $params[] = $pass_hash;
                     $params[] = $targetId;
                 } else {
-                    $sql = "UPDATE acesso_seguro SET $fields WHERE id = ?";
+                    $sql = "UPDATE users SET $fields WHERE id = ?";
                     $params[] = $targetId;
                 }
                 $pdo->prepare($sql)->execute($params);
 
                 if ($is_kiosk === 0) {
-                    $pdo->prepare("UPDATE acesso_seguro SET kiosk_token = NULL, kiosk_token_updated_at = NULL WHERE id = ?")->execute([$targetId]);
+                    $pdo->prepare("UPDATE users SET kiosk_token = NULL, kiosk_token_updated_at = NULL WHERE id = ?")->execute([$targetId]);
                 }
             } else {
                 if (!$pass_hash) {
@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 }, array_keys($matriz_acesso)));
 
                 $cols_names = "nome, usuario, setor, status, is_admin, is_kiosk, senha, $permCols";
-                $sql = "INSERT INTO acesso_seguro ($cols_names) VALUES (" . implode(', ', array_fill(0, 7 + count($matriz_acesso), '?')) . ")";
+                $sql = "INSERT INTO users ($cols_names) VALUES (" . implode(', ', array_fill(0, 7 + count($matriz_acesso), '?')) . ")";
 
                 $insert_params = [$_POST['nome'], $_POST['usuario'], $_POST['setor'], $status, $is_adm, $is_kiosk, $pass_hash];
                 foreach ($matriz_acesso as $slug => $label) {
@@ -165,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             if ((int)$_POST['id'] === (int)$_SESSION['user_id']) {
                 throw new Exception('Você não pode excluir sua própria conta.');
             }
-            $pdo->prepare('DELETE FROM acesso_seguro WHERE id = ?')->execute([(int)$_POST['id']]);
+            $pdo->prepare('DELETE FROM users WHERE id = ?')->execute([(int)$_POST['id']]);
             gestao_contas_json_response(['success' => true]);
         }
 
@@ -185,4 +185,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 }
 
 // Carregar lista de usuários para a view
-$viewData['usuarios'] = $pdo->query("SELECT * FROM acesso_seguro ORDER BY nome ASC")->fetchAll();
+$viewData['usuarios'] = $pdo->query("SELECT * FROM users ORDER BY nome ASC")->fetchAll();

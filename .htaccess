@@ -190,7 +190,7 @@ RewriteRule ^termo-doacao-eletronicos/([0-9]+)/?$ paginas/imprimir_termo_doacao_
 # ======================================================================
 
 # Favicon
-RewriteRule ^favicon\.ico$ /favicon.svg [L,QSA]
+RewriteRule ^favicon\.ico$ favicon.svg [L,QSA]
 
 # ======================================================================
 # SEGURANÇA - Prevenção de Acesso a Arquivos Sensíveis

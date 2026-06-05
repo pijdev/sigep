@@ -36,12 +36,9 @@ function atualizarPrevisaoRetorno() {
   }
 }
 
-// Atualizar ao carregar a página
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function () {
   atualizarPrevisaoRetorno();
-
-  // Atualizar a cada hora caso o usuário mantenha a página aberta
-  setInterval(atualizarPrevisaoRetorno, 60000); // 1 minuto
+  setInterval(atualizarPrevisaoRetorno, 60000);
 });
 
 function escHtml(value) {
@@ -1003,7 +1000,6 @@ function initInicioBusca() {
     });
   }
 
-  // Reset ao fechar modal
   $("#modalDossieInterno")
     .off("hidden.bs.modal")
     .on("hidden.bs.modal", () => {

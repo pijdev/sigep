@@ -1,0 +1,17 @@
+/* FONTES */
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+/* CSS DOS PACOTES NPM/COMPOSER */
+@import 'overlayscrollbars/css/OverlayScrollbars.css';
+@import 'admin-lte/dist/css/adminlte.css';
+@import 'select2/dist/css/select2.css';
+@import 'toastr/build/toastr.css';
+@import 'sweetalert2/dist/sweetalert2.css';
+@import 'datatables.net-bs4/css/dataTables.bootstrap4.css';
+@import 'bootstrap/dist/css/bootstrap.css';
+@import '@sweetalert2/theme-bootstrap-4/bootstrap-4.css';
+@import 'chart.js/dist/Chart.css';
+@import 'fullcalendar/main.css';
+
+/* CSS CUSTOMIZADO */
+@import './css/theme-switch.css';

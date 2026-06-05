@@ -1,4 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <path fill="#3b82f6" d="M256 0l208 96v160c0 128-89 248-208 256-119-8-208-128-208-256V96z"/>
-  <path fill="#ffffff" d="M256 128c-44 0-80 36-80 80s36 80 80 80 80-36 80-80-36-80-80-80zm0 184c-53 0-160 27-160 80v32h320v-32c0-53-107-80-160-80z"/>
+  <defs>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="257.014" cy="258.028" r="208" id="gradient-1">
+      <stop offset="0" style="stop-color: rgb(111, 191, 238);"/>
+      <stop offset="1" style="stop-color: rgb(0% 28.89% 52.944%)"/>
+    </radialGradient>
+  </defs>
+  <path d="M256 0l208 96v160c0 128-89 248-208 256-119-8-208-128-208-256V96z" style="fill-rule: nonzero; paint-order: fill; fill: url(&quot;#gradient-1&quot;);"/>
+  <path d="M 256 85 C 212 85 176 121 176 165 C 176 209 212 245 256 245 C 300 245 336 209 336 165 C 336 121 300 85 256 85 Z M 256 269 C 203 269 96 296 96 349 L 96 381 L 416 381 L 416 349 C 416 296 309 269 256 269 Z" fill="#ffffff"/>
 </svg>

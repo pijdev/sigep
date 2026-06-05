@@ -37,7 +37,7 @@ try {
 }
 
 // Carregar configurações do menu
-require_once __DIR__ . '/../../includes/sidebar_logica.php';
+require_once __DIR__ . '/../../config/sidebar.php';
 $menuConfig = getMenuConfig();
 $userInfo = getUserInfo();
 

@@ -1,8 +1,6 @@
 {
     "require": {
-        "illuminate/database": "^12.53",
-        "illuminate/events": "^12.53",
-        "almasaeed2010/adminlte": "4.0.0-rc7"
+
     },
     "autoload": {
         "psr-4": {

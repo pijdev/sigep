@@ -401,9 +401,6 @@ if (typeof window.erroPagesLoaded === "undefined") {
       usuario: typeof userNome !== "undefined" ? userNome : "Não autenticado",
     };
 
-    // Enviar para analytics (implementar conforme necessário)
-    console.log("Erro registrado:", dadosErro);
-
     // Opcional: Enviar para servidor
     if (typeof enviarAnalytics === "function") {
       enviarAnalytics("erro_pagina", dadosErro);

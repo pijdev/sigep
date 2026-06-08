@@ -12,6 +12,7 @@ require_once 'includes/index_logica.php';
         <?php include_once 'modulos/spa/app-header.php'; ?>
         <?php require_once 'modulos/spa/app-sidebar.php'; ?>
         <?php include_once 'modulos/inicio/inicio_view.php'; ?>
+        <?php require_once 'modulos/spa/app-overlay.php'; ?>
     </div>
     <?php require_once 'modulos/spa/app-footer.php'; ?>
 </body>

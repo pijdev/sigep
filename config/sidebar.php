@@ -159,9 +159,7 @@ function getMenuConfig()
             'items' => [
                 ['title' => 'Painel de Internos', 'icon' => 'fas fa-th-large text-primary', 'page' => '/modulos/geral/painel_internos/internos_painel_view_adminlte4.php', 'parent' => 'Painel de Internos'],
                 ['title' => 'Cadastro de Internos', 'icon' => 'fas fa-users-cog text-primary', 'page' => '/modulos/geral/cadastro_internos/cadastro_internos_view.php', 'parent' => 'Cadastro de Internos'],
-                ['title' => 'Serviços', 'icon' => 'fas fa-cogs text-info', 'page' => 'javascript:void(0)', 'onclick' => 'loadPage(\'/modulos/servicos/job_manager/job_manager_view.php\', \'Agendador de Tarefas\', \'Ferramentas\')', 'parent' => 'Serviços'],
-                ['title' => 'MySQL', 'icon' => 'fas fa-database text-warning', 'page' => '/modulos/servicos/phpmyadmin/phpmyadmin.php', 'parent' => 'Serviços'],
-                ['title' => 'Notificações', 'icon' => 'fas fa-bell text-info', 'page' => '/modulos/servicos/notificacoes/notificacoes_view.php', 'parent' => 'Serviços']
+                ['title' => 'Serviços', 'icon' => 'fas fa-cogs text-info', 'page' => '/modulos/servicos/job_manager/job_manager_view.php', 'parent' => 'Serviços'],
             ]
         ];
     }

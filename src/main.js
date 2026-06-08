@@ -22,9 +22,11 @@ globalThis.Swal = Swal;
 
 import 'datatables.net-bs4';
 
+import './js/agente-ia.js';
 import './js/theme-switch.js';
 import './js/error-pages.js';
 import './js/global.js';
 import './js/alerta-copa.js';
+import '/assets/js/censura_rouparia_numeros.js';
 
 import '../modulos/inicio/assets/js/inicio.js';

@@ -21,6 +21,13 @@ $userInfo = getUserInfo();
         </a>
       </li>
     <?php endif; ?>
+          <li class="nav-item" style="list-style: none;">
+        <a href="#"
+          onclick="window.exibOff('off_ia', true);"
+          class="nav-link">
+          <span style="margin-left: 5px;">🤖 IA</span>
+        </a>
+      </li>
   </ul>
   <!--end::Menus da Esquerda-->
   <!--begin::Menus da Direita-->

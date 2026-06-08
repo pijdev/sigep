@@ -10,9 +10,9 @@ require_once __DIR__ . '/lista_trabalho_logica.php';
 <!-- CSS específico do módulo -->
 <link rel="stylesheet" href="/modulos/laboral/lista_trabalho/assets/css/lista_trabalho.css?v=<?= time() ?>">
 
-    <!-- Main content -->
-    <section class="content pt-3">
-        <div class="container-fluid">
+<!-- Main content -->
+<section class="content pt-3">
+    <div class="container-fluid">
         <!-- CARDS ESTATÍSTICA -->
         <div class="row mb-3 no-print">
             <div class="col-lg-3 col-6">
@@ -398,7 +398,8 @@ require_once __DIR__ . '/lista_trabalho_logica.php';
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 </div>
 
 <!-- Modal Lista de Exclusão -->
@@ -669,7 +670,7 @@ require_once __DIR__ . '/lista_trabalho_logica.php';
     <div class="offcanvas-custom-footer">
         <button type="button" class="btn btn-secondary" data-offcanvas-close>Fechar</button>
     </div>
-
+</div>
 
 <!-- Scripts -->
 <script src="/modulos/laboral/lista_trabalho/assets/js/lista_trabalho.js?v=<?= time() ?>"></script>

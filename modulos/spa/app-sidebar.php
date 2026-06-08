@@ -8,23 +8,12 @@ $userInfo = getUserInfo();
 ?>
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-
-<a href="/" class="brand-link d-flex align-items-center justify-content-center text-white text-decoration-none custom-brand-hover" style="transition: opacity 0.3s ease;">
-    <img src="favicon.svg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8; margin-left: 0; margin-right: 0; transition: transform 0.3s ease;">
-    <span class="brand-text font-weight-light ml-2"><?php echo App::APP_NAME_SHORT; ?> | <?php echo date('Y'); ?></span>
+<!--begin::Branding-->
+<a href="/" class="brand-link d-flex align-items-center justify-content-center">
+    <img src="favicon.svg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8; margin-left: 0; margin-right: 0;">
+    <span class="brand-text font-weight-light"><?php echo App::APP_NAME_SHORT; ?> | <?php echo date('Y'); ?></span>
 </a>
-
-<style>
-    .custom-brand-hover:hover {
-        color: #fff !important;
-        opacity: 0.85;
-    }
-    .custom-brand-hover:hover img {
-        transform: scale(1.08);
-        opacity: 1 !important;
-    }
-</style>
-
+<!--end::Branding-->
 
 
     <div class="sidebar">

@@ -1,16 +1,14 @@
 <?php
-session_start();
-
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
 require_once __DIR__ . '/../../config/database.php';
-require_once __DIR__ . '/InternosTools.php';
+require_once __DIR__ . '/../../modulos/agente_ia/Tools/InternosTools.php';
 
 use Config\Database;
-use AgentIA\InternosTools;
+use AgentIA\Tools\InternosTools;
 
 file_put_contents('debug_ollama.log', 'Script iniciado em: ' . date('Y-m-d H:i:s') . "\n", FILE_APPEND);
 

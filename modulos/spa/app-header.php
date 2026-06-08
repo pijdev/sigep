@@ -21,7 +21,7 @@ $userInfo = getUserInfo();
         </a>
       </li>
     <?php endif; ?>
-          <li class="nav-item" style="list-style: none;">
+          <li class="nav-item" style="list-style: none;" id="ia-btn">
         <a href="#"
           onclick="window.exibOff('off_ia', true);"
           class="nav-link">

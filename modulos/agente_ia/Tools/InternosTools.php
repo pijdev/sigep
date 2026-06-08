@@ -1,5 +1,5 @@
 <?php
-namespace AgentIA;
+namespace AgentIA\Tools;
 
 use PDO;
 

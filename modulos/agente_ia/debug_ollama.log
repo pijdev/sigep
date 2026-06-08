@@ -1,214 +1,61 @@
-Script iniciado em: 2026-06-08 12:13:02
-Mensagem recebida: onde está o interno odilon josé bastos?
-Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T12:13:04.782600861Z","response":"[TOOL: localizar_interno|ipen=123456] *(Nota: O IPEN de Odilon José Bastos não foi fornecido. Para buscar sua localização, é necessário o número de IPEN exato. Peça o número correto para prosseguir.)*","done":true,"done_reason":"stop","total_duration":564949689,"prompt_eval_count":1074,"eval_count":64}
-
-Resposta decodificada: Array
-(
-    [model] => ministral-3:3b
-    [created_at] => 2026-06-08T12:13:04.782600861Z
-    [response] => [TOOL: localizar_interno|ipen=123456] *(Nota: O IPEN de Odilon José Bastos não foi fornecido. Para buscar sua localização, é necessário o número de IPEN exato. Peça o número correto para prosseguir.)*
-    [done] => 1
-    [done_reason] => stop
-    [total_duration] => 564949689
-    [prompt_eval_count] => 1074
-    [eval_count] => 64
-)
-
-
-Encontrada tool na resposta: localizar_interno
-Executando tool: localizar_interno com params: {"ipen":"123456"}
-Script iniciado em: 2026-06-08 12:15:43
-Mensagem recebida: 787056
-Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T12:15:45.702569433Z","response":"[TOOL: buscar_por_ipen|ipen=787056]","done":true,"done_reason":"stop","total_duration":358155625,"prompt_eval_count":1069,"eval_count":21}
-
-Resposta decodificada: Array
-(
-    [model] => ministral-3:3b
-    [created_at] => 2026-06-08T12:15:45.702569433Z
-    [response] => [TOOL: buscar_por_ipen|ipen=787056]
-    [done] => 1
-    [done_reason] => stop
-    [total_duration] => 358155625
-    [prompt_eval_count] => 1069
-    [eval_count] => 21
-)
-
-
-Encontrada tool na resposta: buscar_por_ipen
-Executando tool: buscar_por_ipen com params: {"ipen":"787056"}
-Script iniciado em: 2026-06-08 12:15:57
-Mensagem recebida: 746252
-Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T12:15:59.84364185Z","response":"[TOOL: buscar_por_ipen|ipen=746252]","done":true,"done_reason":"stop","total_duration":486515553,"prompt_eval_count":1150,"eval_count":21}
-
-Resposta decodificada: Array
-(
-    [model] => ministral-3:3b
-    [created_at] => 2026-06-08T12:15:59.84364185Z
-    [response] => [TOOL: buscar_por_ipen|ipen=746252]
-    [done] => 1
-    [done_reason] => stop
-    [total_duration] => 486515553
-    [prompt_eval_count] => 1150
-    [eval_count] => 21
-)
-
-
-Encontrada tool na resposta: buscar_por_ipen
-Executando tool: buscar_por_ipen com params: {"ipen":"746252"}
-Script iniciado em: 2026-06-08 12:18:55
-Mensagem recebida: quantos internos em portaria?
-Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T12:18:57.483065045Z","response":"[TOOL: buscar_internos|query=portaria]","done":true,"done_reason":"stop","total_duration":552747214,"prompt_eval_count":828,"eval_count":15}
-
-Resposta decodificada: Array
-(
-    [model] => ministral-3:3b
-    [created_at] => 2026-06-08T12:18:57.483065045Z
-    [response] => [TOOL: buscar_internos|query=portaria]
-    [done] => 1
-    [done_reason] => stop
-    [total_duration] => 552747214
-    [prompt_eval_count] => 828
-    [eval_count] => 15
-)
-
-
-Encontrada tool na resposta: buscar_internos
-Executando tool: buscar_internos com params: {"query":"portaria"}
-Query: portaria
-Filtros detectados: {"ipen":"","nome":"","galeria":"","bloco":"","res":"","situacao":"SA\u00cdDA TEMPOR\u00c1RIA","lgbtOnly":false,"incluirInativos":false}
-Script iniciado em: 2026-06-08 12:23:13
-Mensagem recebida: oi, bom dia!
-Script iniciado em: 2026-06-08 12:25:15
+Script iniciado em: 2026-06-08 17:29:25
 Mensagem recebida: oi
-Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T12:25:18.194423154Z","response":"Olá! Para ajudar você com informações sobre o SIGEP, preciso de uma consulta específica sobre internos. Por favor, me informe qual é a sua pergunta ou busca exata (exemplo: nome, IPEN, cela, situação, etc.). Assim, posso aplicar os filtros corretos.\n\nExemplo de como posso ajudar:\n- *\"Onde está o interno 787056?\"* → [TOOL: buscar_internos|query=787056]\n- *\"Quantos internos LGBT estão na cela SA-1?\"* → [TOOL: buscar_internos|query=LGBT cela SA-1]","done":true,"done_reason":"stop","total_duration":944576582,"prompt_eval_count":821,"eval_count":139}
+Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T17:29:27.783765323Z","response":"[TOOL: buscar_internos|query=]","done":true,"done_reason":"stop","total_duration":373857531,"prompt_eval_count":952,"eval_count":13}
 
 Resposta decodificada: Array
 (
     [model] => ministral-3:3b
-    [created_at] => 2026-06-08T12:25:18.194423154Z
-    [response] => Olá! Para ajudar você com informações sobre o SIGEP, preciso de uma consulta específica sobre internos. Por favor, me informe qual é a sua pergunta ou busca exata (exemplo: nome, IPEN, cela, situação, etc.). Assim, posso aplicar os filtros corretos.
-
-Exemplo de como posso ajudar:
-- *"Onde está o interno 787056?"* → [TOOL: buscar_internos|query=787056]
-- *"Quantos internos LGBT estão na cela SA-1?"* → [TOOL: buscar_internos|query=LGBT cela SA-1]
+    [created_at] => 2026-06-08T17:29:27.783765323Z
+    [response] => [TOOL: buscar_internos|query=]
     [done] => 1
     [done_reason] => stop
-    [total_duration] => 944576582
-    [prompt_eval_count] => 821
-    [eval_count] => 139
+    [total_duration] => 373857531
+    [prompt_eval_count] => 952
+    [eval_count] => 13
 )
 
 
 Encontrada tool na resposta: buscar_internos
-Executando tool: buscar_internos com params: {"query":"787056"}
-Query: 787056
-Filtros detectados: {"ipen":"787056","nome":"","galeria":"","bloco":"","res":"","situacao":"","lgbtOnly":false,"incluirInativos":false}
-Encontrada tool na resposta: buscar_internos
-Executando tool: buscar_internos com params: {"query":"LGBT cela SA-1"}
-Query: LGBT cela SA-1
-Filtros detectados: {"ipen":"","nome":"","galeria":"S","bloco":"A","res":"1","situacao":"","lgbtOnly":true,"incluirInativos":false}
-Script iniciado em: 2026-06-08 12:35:20
-Mensagem recebida: liste os internos de portaria
-Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T12:35:22.17370683Z","response":"[TOOL: buscar_internos|query=saída temporária]","done":true,"done_reason":"stop","total_duration":397443843,"prompt_eval_count":958,"eval_count":17}
+Executando tool: buscar_internos com params: {"query":""}
+Script iniciado em: 2026-06-08 17:31:01
+Mensagem recebida: quem recebeu colchão por último?
+Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T17:31:04.233682206Z","response":"[TOOL: buscar_internos|query=colchão]","done":true,"done_reason":"stop","total_duration":408592534,"prompt_eval_count":960,"eval_count":16}
 
 Resposta decodificada: Array
 (
     [model] => ministral-3:3b
-    [created_at] => 2026-06-08T12:35:22.17370683Z
-    [response] => [TOOL: buscar_internos|query=saída temporária]
+    [created_at] => 2026-06-08T17:31:04.233682206Z
+    [response] => [TOOL: buscar_internos|query=colchão]
     [done] => 1
     [done_reason] => stop
-    [total_duration] => 397443843
-    [prompt_eval_count] => 958
+    [total_duration] => 408592534
+    [prompt_eval_count] => 960
+    [eval_count] => 16
+)
+
+
+Encontrada tool na resposta: buscar_internos
+Executando tool: buscar_internos com params: {"query":"colch\u00e3o"}
+Query: colchão
+Filtros detectados: {"ipen":"","nome":"colch\u00e3o","galeria":"","bloco":"","res":"","situacao":"","lgbtOnly":false,"incluirInativos":false}
+Script iniciado em: 2026-06-08 17:31:08
+Mensagem recebida: quem trabalha?
+Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T17:31:11.264416803Z","response":"[TOOL: buscar_internos|query=trabalha]","done":true,"done_reason":"stop","total_duration":405903473,"prompt_eval_count":956,"eval_count":17}
+
+Resposta decodificada: Array
+(
+    [model] => ministral-3:3b
+    [created_at] => 2026-06-08T17:31:11.264416803Z
+    [response] => [TOOL: buscar_internos|query=trabalha]
+    [done] => 1
+    [done_reason] => stop
+    [total_duration] => 405903473
+    [prompt_eval_count] => 956
     [eval_count] => 17
 )
 
 
 Encontrada tool na resposta: buscar_internos
-Executando tool: buscar_internos com params: {"query":"sa\u00edda tempor\u00e1ria"}
-Query: saída temporária
-Filtros detectados: {"ipen":"","nome":"","galeria":"","bloco":"","res":"","situacao":"SA\u00edDA TEMPOR\u00e1RIA","lgbtOnly":false,"incluirInativos":false}
-Script iniciado em: 2026-06-08 12:38:30
-Mensagem recebida: quantos são?
-Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T12:38:31.967019822Z","response":"[TOOL: buscar_internos|query=quantos]","done":true,"done_reason":"stop","total_duration":357745143,"prompt_eval_count":955,"eval_count":15}
-
-Resposta decodificada: Array
-(
-    [model] => ministral-3:3b
-    [created_at] => 2026-06-08T12:38:31.967019822Z
-    [response] => [TOOL: buscar_internos|query=quantos]
-    [done] => 1
-    [done_reason] => stop
-    [total_duration] => 357745143
-    [prompt_eval_count] => 955
-    [eval_count] => 15
-)
-
-
-Encontrada tool na resposta: buscar_internos
-Executando tool: buscar_internos com params: {"query":"quantos"}
-Query: quantos
-Filtros detectados: {"ipen":"","nome":"quantos","galeria":"","bloco":"","res":"","situacao":"","lgbtOnly":false,"incluirInativos":false}
-Script iniciado em: 2026-06-08 12:38:36
-Mensagem recebida: quantos internos em portaria?
-Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T12:38:38.336678121Z","response":"[TOOL: buscar_internos|query=saída temporária]","done":true,"done_reason":"stop","total_duration":360971107,"prompt_eval_count":959,"eval_count":17}
-
-Resposta decodificada: Array
-(
-    [model] => ministral-3:3b
-    [created_at] => 2026-06-08T12:38:38.336678121Z
-    [response] => [TOOL: buscar_internos|query=saída temporária]
-    [done] => 1
-    [done_reason] => stop
-    [total_duration] => 360971107
-    [prompt_eval_count] => 959
-    [eval_count] => 17
-)
-
-
-Encontrada tool na resposta: buscar_internos
-Executando tool: buscar_internos com params: {"query":"sa\u00edda tempor\u00e1ria"}
-Query: saída temporária
-Filtros detectados: {"ipen":"","nome":"","galeria":"","bloco":"","res":"","situacao":"SA\u00edDA TEMPOR\u00e1RIA","lgbtOnly":false,"incluirInativos":false}
-Script iniciado em: 2026-06-08 12:38:50
-Mensagem recebida: quantos internos na cela SE-3?
-Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T12:38:51.907331526Z","response":"[TOOL: buscar_internos|query=cela SE-3]","done":true,"done_reason":"stop","total_duration":375789075,"prompt_eval_count":961,"eval_count":17}
-
-Resposta decodificada: Array
-(
-    [model] => ministral-3:3b
-    [created_at] => 2026-06-08T12:38:51.907331526Z
-    [response] => [TOOL: buscar_internos|query=cela SE-3]
-    [done] => 1
-    [done_reason] => stop
-    [total_duration] => 375789075
-    [prompt_eval_count] => 961
-    [eval_count] => 17
-)
-
-
-Encontrada tool na resposta: buscar_internos
-Executando tool: buscar_internos com params: {"query":"cela SE-3"}
-Query: cela SE-3
-Filtros detectados: {"ipen":"","nome":"","galeria":"S","bloco":"E","res":"3","situacao":"","lgbtOnly":false,"incluirInativos":false}
-Script iniciado em: 2026-06-08 12:39:50
-Mensagem recebida: internos lgbt
-Resposta bruta: {"model":"ministral-3:3b","created_at":"2026-06-08T12:39:51.756629509Z","response":"[TOOL: buscar_internos|query=LGBT]","done":true,"done_reason":"stop","total_duration":324627858,"prompt_eval_count":955,"eval_count":15}
-
-Resposta decodificada: Array
-(
-    [model] => ministral-3:3b
-    [created_at] => 2026-06-08T12:39:51.756629509Z
-    [response] => [TOOL: buscar_internos|query=LGBT]
-    [done] => 1
-    [done_reason] => stop
-    [total_duration] => 324627858
-    [prompt_eval_count] => 955
-    [eval_count] => 15
-)
-
-
-Encontrada tool na resposta: buscar_internos
-Executando tool: buscar_internos com params: {"query":"LGBT"}
-Query: LGBT
-Filtros detectados: {"ipen":"","nome":"","galeria":"","bloco":"","res":"","situacao":"","lgbtOnly":true,"incluirInativos":false}
+Executando tool: buscar_internos com params: {"query":"trabalha"}
+Query: trabalha
+Filtros detectados: {"ipen":"","nome":"trabalha","galeria":"","bloco":"","res":"","situacao":"","lgbtOnly":false,"incluirInativos":false}
